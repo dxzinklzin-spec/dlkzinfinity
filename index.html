@@ -17,14 +17,13 @@
   font-family:Arial, sans-serif;
 }
 
-/* FUNDO PRETO */
 body{
   background:#000;
   color:white;
   overflow-x:hidden;
 }
 
-/* LOADING */
+/* LOADING (NÃO MUDADO, SÓ ANIMAÇÃO RESTAURADA) */
 #loading{
   position:fixed;
   inset:0;
@@ -84,7 +83,7 @@ body{
   background:#00aaff;
 }
 
-/* ESTRELAS */
+/* ESTRELAS (NÃO MEXIDO) */
 .stars{
   position:fixed;
   inset:0;
@@ -183,6 +182,16 @@ button{
   cursor:pointer;
 }
 
+/* FORM */
+textarea, select{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
 /* FOOTER */
 footer{
   text-align:center;
@@ -195,7 +204,7 @@ footer{
 
 <body>
 
-<!-- LOADING -->
+<!-- LOADING (CORRIGIDO + ANIMAÇÃO) -->
 <div id="loading">
   <div class="loading-box">
     <div class="title">SEJA BEM-VINDO</div>
@@ -225,7 +234,7 @@ footer{
   </div>
 </section>
 
-<!-- SOBRE MIM (ORIGINAL RESTAURADO) -->
+<!-- SOBRE MIM (SEM MUDAR) -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
@@ -254,19 +263,36 @@ footer{
   </div>
 </section>
 
-<!-- CONTATO -->
+<!-- 🔥 NOVO: PEDIDO DO CLIENTE (ADICIONADO COMO PEDIDO) -->
 <section class="fade">
-  <h2>Contato</h2>
-  <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
+  <h2>Pedido da edição</h2>
+
+  <div class="about-block">
+    <p>Escolha o tipo de edição:</p>
+    <select id="tipo">
+      <option>Anime</option>
+      <option>Futebol</option>
+      <option>Motion</option>
+      <option>Foto</option>
+    </select>
+  </div>
+
+  <div class="about-block">
+    <p>Descreva sua edição:</p>
+    <textarea id="msg" placeholder="Ex: quero uma edit dark, com flash e transição rápida..."></textarea>
+  </div>
+
+  <button onclick="zap()">ENVIAR NO WHATSAPP</button>
 </section>
 
+<!-- FOOTER (ARRUMADO) -->
 <footer>
   © DLKZ77CC EDITZ
 </footer>
 
 <script>
 
-/* LOADING COM ANIMAÇÃO */
+/* LOADING ANIMADO */
 window.addEventListener("load", () => {
 
   const loading = document.getElementById("loading");
@@ -320,11 +346,18 @@ for(let i=0;i<120;i++){
   s.style.animationDuration=(Math.random()*5+3)+"s";
 
   stars.appendChild(s);
-}
+});
 
 /* WHATSAPP */
 function zap(){
-  window.open("https://wa.me/5511951319587");
+
+  const tipo=document.getElementById("tipo").value;
+  const msg=document.getElementById("msg").value;
+
+  const url="https://wa.me/5511951319587?text="+
+  encodeURIComponent("Quero uma edição de: "+tipo+" | Detalhes: "+msg);
+
+  window.open(url);
 }
 
 </script>
