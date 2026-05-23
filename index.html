@@ -9,7 +9,6 @@
 
 <style>
 
-/* RESET */
 * {
   margin: 0;
   padding: 0;
@@ -23,14 +22,14 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= LOADING ================= */
+/* LOADING */
 #loading {
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at center, #0a0a0a, #000);
+  background: radial-gradient(circle, #0a0a0a, #000);
   z-index: 9999;
 }
 
@@ -40,13 +39,12 @@ body {
   border-radius: 16px;
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(12px);
 }
 
 .title {
-  font-family: Orbitron, sans-serif;
-  font-size: 20px;
+  font-family: Orbitron;
   color: #00aaff;
+  font-size: 20px;
 }
 
 #percent {
@@ -67,10 +65,10 @@ body {
 #progress {
   width: 0%;
   height: 100%;
-  background: linear-gradient(90deg, #00aaff, #0066ff);
+  background: #00aaff;
 }
 
-/* ================= ESTRELAS ================= */
+/* ESTRELAS */
 .stars {
   position: fixed;
   inset: 0;
@@ -83,7 +81,6 @@ body {
   height: 2px;
   background: #4aaaff;
   border-radius: 50%;
-  opacity: 0.7;
   animation: float linear infinite;
   box-shadow: 0 0 6px #4aaaff;
 }
@@ -93,24 +90,10 @@ body {
   to { transform: translateY(-120vh); }
 }
 
-/* ================= LAYOUT CORRIGIDO ================= */
+/* LAYOUT */
 header, section, footer {
   position: relative;
   z-index: 2;
-}
-
-/* 🔥 CENTRALIZA TUDO CORRETAMENTE */
-section {
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* conteúdo limitado */
-section > * {
-  width: 100%;
-  max-width: 650px;
 }
 
 header {
@@ -124,11 +107,16 @@ header {
   text-shadow: 0 0 12px #00aaff;
 }
 
-/* TITULOS */
-section h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #00aaff;
+section {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section > * {
+  max-width: 650px;
+  width: 100%;
 }
 
 /* FADE */
@@ -143,12 +131,12 @@ section h2 {
   transform: translateY(0);
 }
 
-/* ================= TABELA ================= */
+/* TABELA */
 .table {
   background: rgba(255,255,255,0.04);
   border-radius: 14px;
-  overflow: hidden;
   border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
 }
 
 .row {
@@ -163,7 +151,7 @@ section h2 {
 .row span { color: #bbb; }
 .row b { color: #00aaff; }
 
-/* ================= TEXTO ================= */
+/* TEXTO */
 .about-block {
   margin: 12px 0;
   padding: 14px;
@@ -176,7 +164,7 @@ section h2 {
   color: #ddd;
 }
 
-/* ================= BOTÃO ================= */
+/* BOTÃO */
 button {
   width: 100%;
   padding: 14px;
@@ -186,14 +174,6 @@ button {
   border-radius: 10px;
   color: white;
   font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 15px #00aaff;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.04);
-  box-shadow: 0 0 25px #00aaff;
 }
 
 /* FOOTER */
@@ -220,13 +200,11 @@ footer {
 <!-- ESTRELAS -->
 <div class="stars" id="stars"></div>
 
-<!-- HEADER -->
 <header class="fade">
   <h1 class="glow">DLKZ77CC EDITZ</h1>
   <p>Motion | Anime | Futebol | Foto</p>
 </header>
 
-<!-- PREÇOS -->
 <section class="fade">
   <h2>Preços</h2>
 
@@ -240,28 +218,34 @@ footer {
   </div>
 </section>
 
-<!-- SOBRE -->
+<!-- TEXTO ORIGINAL SEM RESUMO -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
   <div class="about-block">
-    <p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e fotos.</p>
+    <p>
+Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos. Trabalho transformando imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.
+    </p>
   </div>
 
   <div class="about-block">
-    <p>Transformo cenas em algo mais impactante, com foco em estética e emoção.</p>
+    <p>
+Nas edits de anime, busco intensidade e identidade visual forte, destacando cada frame com efeitos que combinam com a energia das cenas. No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada, deixando tudo mais dinâmico e envolvente.
+    </p>
   </div>
 
   <div class="about-block">
-    <p>Sempre buscando evolução e qualidade em cada projeto.</p>
+    <p>
+Também atuo na edição de fotos, aprimorando cores, contraste e estilo para criar visuais mais chamativos e profissionais. Estou sempre evoluindo, testando novas ideias e buscando elevar o nível de cada projeto.
+    </p>
   </div>
+
 </section>
 
-<!-- PEDIDO -->
 <section class="fade">
   <h2>Pedido</h2>
 
-  <textarea placeholder="Descreva sua edição..." style="width:100%;padding:12px;border-radius:8px;background:#111;color:white;border:none;"></textarea>
+  <textarea style="width:100%;padding:12px;border-radius:8px;background:#111;color:white;border:none;" placeholder="Descreva sua edição..."></textarea>
 
   <button onclick="zap()">FALAR NO WHATSAPP</button>
 </section>
@@ -272,31 +256,37 @@ footer {
 
 <script>
 
-/* LOADING */
+/* LOADING SEM BUG */
 let p = 0;
 
-let load = setInterval(() => {
-  p++;
+const progress = document.getElementById("progress");
+const percent = document.getElementById("percent");
+const loading = document.getElementById("loading");
 
-  document.getElementById("progress").style.width = p + "%";
-  document.getElementById("percent").innerText = p + "%";
+let load = setInterval(() => {
 
   if (p >= 100) {
     clearInterval(load);
 
-    document.getElementById("loading").style.opacity = "0";
+    loading.style.opacity = "0";
 
     setTimeout(() => {
-      document.getElementById("loading").style.display = "none";
+      loading.style.display = "none";
 
       document.querySelectorAll(".fade").forEach((el,i)=>{
-        setTimeout(()=> el.classList.add("show"), i*200);
+        setTimeout(()=> el.classList.add("show"), i*150);
       });
 
-    }, 700);
+    }, 500);
+
+    return;
   }
 
-}, 20);
+  p += 2;
+  progress.style.width = p + "%";
+  percent.innerText = p + "%";
+
+}, 30);
 
 /* ESTRELAS */
 const stars = document.getElementById("stars");
@@ -320,4 +310,4 @@ function zap(){
 </script>
 
 </body>
-</html>
+  </html>
