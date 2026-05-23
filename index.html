@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gojo Portfolio</title>
+<title>DLKZ77CC EDITZ</title>
 
 <style>
 
@@ -36,49 +36,24 @@ body {
   transition: 0.6s;
 }
 
-/* FRASE EXPANSÃO DE DOMÍNIO */
 .title {
   color: #00aaff;
-  letter-spacing: 2px;
   font-size: 20px;
-
+  letter-spacing: 2px;
   opacity: 0;
   animation: fadeTitle 1.2s ease forwards;
 }
 
 @keyframes fadeTitle {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* NÚMERO */
 #percent {
   font-size: 22px;
   color: #00aaff;
-
-  opacity: 0;
-  animation: fadeNumber 0.8s ease forwards;
-  animation-delay: 0.3s;
 }
 
-@keyframes fadeNumber {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-/* BARRA */
 #bar {
   width: 220px;
   height: 6px;
@@ -93,14 +68,13 @@ body {
   background: #00aaff;
 }
 
-/* ===== ESTRELAS (MOVIMENTO SUAVE) ===== */
+/* ===== ESTRELAS ===== */
 .stars {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: -2;
   overflow: hidden;
-  background: transparent;
 }
 
 .star {
@@ -119,13 +93,29 @@ body {
   to { transform: translateY(-120vh); }
 }
 
+/* GOJO BACKGROUND */
+.gojo-bg {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: url("https://i.imgur.com/4QfKuz1.png") center/contain no-repeat;
+  opacity: 0.12;
+  z-index: -1;
+}
+
 /* HEADER */
 header {
   text-align: center;
   padding: 40px 20px;
 }
 
-/* FADE IN (SÓ DEPOIS DO LOADING) */
+.glow {
+  font-size: 38px;
+  color: #00aaff;
+  text-shadow: 0 0 10px #00aaff, 0 0 20px #0066ff;
+}
+
+/* FADE IN */
 .fade {
   opacity: 0;
   transform: translateY(30px);
@@ -180,12 +170,6 @@ footer {
   color: #666;
 }
 
-.glow {
-  font-size: 38px;
-  color: #00aaff;
-  text-shadow: 0 0 10px #00aaff, 0 0 20px #0066ff;
-}
-
 </style>
 </head>
 
@@ -198,12 +182,15 @@ footer {
   <div id="bar"><div id="progress"></div></div>
 </div>
 
+<!-- BACKGROUND -->
+<div class="gojo-bg"></div>
+
 <!-- ESTRELAS -->
 <div class="stars" id="stars"></div>
 
 <!-- CONTEÚDO -->
 <header class="fade">
-  <h1 class="glow">SATORU GOJO EDITS</h1>
+  <h1 class="glow">DLKZ77CC EDITZ</h1>
   <p>Motion | Anime | Futebol | Foto</p>
 </header>
 
@@ -226,7 +213,7 @@ footer {
   </p>
 
   <p>
-    Nos edits de anime, busco intensidade e estilo, destacando cada frame com efeitos que combinam com a energia das cenas. No futebol, meu foco é a velocidade, a adrenalina e o impacto de cada jogada, deixando tudo mais dinâmico e envolvente.
+    Nas edits de anime, busco intensidade e estilo, destacando cada frame com efeitos que combinam com a energia das cenas. No futebol, meu foco é a velocidade, a adrenalina e o impacto de cada jogada, deixando tudo mais dinâmico e envolvente.
   </p>
 
   <p>
@@ -235,12 +222,12 @@ footer {
 </section>
 
 <footer>
-  <p>© Gojo Level Editor</p>
+  <p>© DLKZ77CC EDITZ</p>
 </footer>
 
 <script>
 
-/* LOADING 0 → 100 */
+/* LOADING */
 let p = 0;
 
 let load = setInterval(() => {
@@ -257,7 +244,6 @@ let load = setInterval(() => {
     setTimeout(() => {
       document.getElementById("loading").style.display = "none";
 
-      // FADE IN SÓ DEPOIS DO LOADING
       document.querySelectorAll(".fade").forEach((el, i) => {
         setTimeout(() => {
           el.classList.add("show");
@@ -269,7 +255,7 @@ let load = setInterval(() => {
 
 }, 20);
 
-/* ESTRELAS SUAVES */
+/* ESTRELAS */
 const stars = document.getElementById("stars");
 
 for (let i = 0; i < 100; i++) {
@@ -278,7 +264,6 @@ for (let i = 0; i < 100; i++) {
 
   s.style.left = Math.random() * 100 + "%";
   s.style.top = Math.random() * 100 + "%";
-
   s.style.animationDuration = (Math.random() * 5 + 3) + "s";
   s.style.opacity = Math.random();
 
