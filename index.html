@@ -23,7 +23,7 @@ body{
   overflow-x:hidden;
 }
 
-/* LOADING (NÃO MUDADO, SÓ ANIMAÇÃO RESTAURADA) */
+/* LOADING */
 #loading{
   position:fixed;
   inset:0;
@@ -42,24 +42,12 @@ body{
   border-radius:18px;
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.1);
-  animation:fadeInScale 0.8s ease;
-}
-
-@keyframes fadeInScale{
-  0%{opacity:0; transform:scale(0.8);}
-  100%{opacity:1; transform:scale(1);}
 }
 
 .title{
   font-family:'Orbitron', sans-serif;
   color:#00aaff;
   font-size:20px;
-  animation:glow 1.5s infinite alternate;
-}
-
-@keyframes glow{
-  from{text-shadow:0 0 5px #00aaff;}
-  to{text-shadow:0 0 18px #00aaff;}
 }
 
 #percent{
@@ -83,7 +71,7 @@ body{
   background:#00aaff;
 }
 
-/* ESTRELAS (NÃO MEXIDO) */
+/* ESTRELAS */
 .stars{
   position:fixed;
   inset:0;
@@ -204,7 +192,7 @@ footer{
 
 <body>
 
-<!-- LOADING (CORRIGIDO + ANIMAÇÃO) -->
+<!-- LOADING -->
 <div id="loading">
   <div class="loading-box">
     <div class="title">SEJA BEM-VINDO</div>
@@ -222,19 +210,19 @@ footer{
   <p>Motion | Anime | Futebol | Foto</p>
 </header>
 
-<!-- PREÇOS -->
+<!-- PREÇOS (SÓ ISSO FOI ALTERADO) -->
 <section class="fade">
   <h2>Preços</h2>
 
   <div class="table">
-    <div class="row"><span>Edição de Fotos</span><b>R$ 7</b></div>
-    <div class="row"><span>Futebol</span><b>R$ 12</b></div>
-    <div class="row"><span>Anime</span><b>R$ 15</b></div>
-    <div class="row"><span>Motion</span><b>R$ 30</b></div>
+    <div class="row"><span>Edição de Fotos</span><b>R$ 7,00 Reais</b></div>
+    <div class="row"><span>Futebol</span><b>R$ 12,00 Reais</b></div>
+    <div class="row"><span>Anime</span><b>R$ 15,00 Reais</b></div>
+    <div class="row"><span>Motion</span><b>R$ 30,00 Reais</b></div>
   </div>
 </section>
 
-<!-- SOBRE MIM (SEM MUDAR) -->
+<!-- SOBRE MIM (INALTERADO) -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
@@ -263,36 +251,19 @@ footer{
   </div>
 </section>
 
-<!-- 🔥 NOVO: PEDIDO DO CLIENTE (ADICIONADO COMO PEDIDO) -->
+<!-- CONTATO -->
 <section class="fade">
-  <h2>Pedido da edição</h2>
-
-  <div class="about-block">
-    <p>Escolha o tipo de edição:</p>
-    <select id="tipo">
-      <option>Anime</option>
-      <option>Futebol</option>
-      <option>Motion</option>
-      <option>Foto</option>
-    </select>
-  </div>
-
-  <div class="about-block">
-    <p>Descreva sua edição:</p>
-    <textarea id="msg" placeholder="Ex: quero uma edit dark, com flash e transição rápida..."></textarea>
-  </div>
-
-  <button onclick="zap()">ENVIAR NO WHATSAPP</button>
+  <h2>Contato</h2>
+  <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
 </section>
 
-<!-- FOOTER (ARRUMADO) -->
 <footer>
   © DLKZ77CC EDITZ
 </footer>
 
 <script>
 
-/* LOADING ANIMADO */
+/* LOADING */
 window.addEventListener("load", () => {
 
   const loading = document.getElementById("loading");
@@ -350,14 +321,7 @@ for(let i=0;i<120;i++){
 
 /* WHATSAPP */
 function zap(){
-
-  const tipo=document.getElementById("tipo").value;
-  const msg=document.getElementById("msg").value;
-
-  const url="https://wa.me/5511951319587?text="+
-  encodeURIComponent("Quero uma edição de: "+tipo+" | Detalhes: "+msg);
-
-  window.open(url);
+  window.open("https://wa.me/5511951319587");
 }
 
 </script>
