@@ -21,7 +21,6 @@ body {
   background: #05070f;
   color: white;
   overflow-x: hidden;
-  position: relative;
 }
 
 /* LOADING */
@@ -40,17 +39,15 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   padding: 30px 40px;
   border-radius: 18px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
-
-  animation: pulseGlow 1.5s infinite;
+  animation: pulse 1.5s infinite;
 }
 
-@keyframes pulseGlow {
+@keyframes pulse {
   0% { transform: scale(1); opacity: 0.7; }
   50% { transform: scale(1.05); opacity: 1; }
   100% { transform: scale(1); opacity: 0.7; }
@@ -60,13 +57,11 @@ body {
   font-family: 'Orbitron', sans-serif;
   font-size: 20px;
   color: #00aaff;
-  letter-spacing: 2px;
 }
 
 #percent {
   font-size: 22px;
   color: #00aaff;
-  margin-top: 5px;
 }
 
 #bar {
@@ -89,9 +84,9 @@ body {
   position: fixed;
   inset: 0;
   z-index: 0;
-  background: url("https://images5.alphacoders.com/131/1314707.jpeg") center/cover no-repeat;
-  filter: blur(1px) brightness(0.5);
-  opacity: 0.22;
+  background: url("https://i.imgur.com/9XUQh0P.jpeg") center/cover no-repeat;
+  filter: blur(1px) brightness(0.55);
+  opacity: 0.28;
   transform: scale(1.05);
 }
 
@@ -173,20 +168,7 @@ section {
 .row span { color: #ccc; }
 .row b { color: #00aaff; }
 
-/* INPUTS */
-select, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
-  border: none;
-  background: #111;
-  color: white;
-}
-
-textarea { height: 100px; }
-
-/* BOTÃO WHATSAPP GLOW */
+/* BOTÃO WHATSAPP */
 button {
   width: 100%;
   margin-top: 10px;
@@ -197,14 +179,32 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
-
-  box-shadow: 0 0 10px #00aaff, 0 0 20px #0066ff;
+  box-shadow: 0 0 12px #00aaff, 0 0 25px #0066ff;
   transition: 0.3s;
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #00aaff, 0 0 40px #0066ff;
+  box-shadow: 0 0 25px #00aaff, 0 0 50px #0066ff;
+}
+
+/* TEXTO ESPAÇADO */
+.about-block {
+  margin: 18px 0;
+  padding: 12px 15px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.about-block:hover {
+  background: rgba(0,170,255,0.08);
+  transform: scale(1.02);
+}
+
+.about-block p {
+  line-height: 1.6;
+  color: #ddd;
 }
 
 /* FOOTER */
@@ -218,9 +218,6 @@ footer {
 </head>
 
 <body>
-
-<!-- SOM -->
-<audio id="loadSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7f6c2f1c3a.mp3?filename=interface-click-124464.mp3"></audio>
 
 <!-- LOADING -->
 <div id="loading">
@@ -257,16 +254,21 @@ footer {
   </div>
 </section>
 
-<!-- SOBRE MIM ORGANIZADO -->
+<!-- SOBRE MIM ESPAÇADO -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
-  <p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.</p>
-  <p>Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.</p>
-  <p>Nas edits de anime, busco intensidade e identidade visual forte.</p>
-  <p>No futebol, foco na velocidade, adrenalina e impacto das jogadas.</p>
-  <p>Na edição de fotos, aprimoro cores, contraste e estilo profissional.</p>
-  <p>Estou sempre evoluindo e buscando elevar o nível de cada projeto.</p>
+  <div class="about-block"><p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.</p></div>
+
+  <div class="about-block"><p>Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.</p></div>
+
+  <div class="about-block"><p>Nas edits de anime, busco intensidade e identidade visual forte.</p></div>
+
+  <div class="about-block"><p>No futebol, foco na velocidade, na adrenalina e no impacto das jogadas.</p></div>
+
+  <div class="about-block"><p>Na edição de fotos, crio visuais profissionais e chamativos.</p></div>
+
+  <div class="about-block"><p>Sempre buscando evoluir e elevar o nível de cada projeto.</p></div>
 </section>
 
 <!-- PEDIDO -->
@@ -294,7 +296,6 @@ footer {
 
 /* LOADING */
 let p = 0;
-document.getElementById("loadSound").play();
 
 let load = setInterval(() => {
   p++;
@@ -329,7 +330,7 @@ for (let i = 0; i < 120; i++) {
   s.style.animationDuration = (Math.random()*5+3)+"s";
 
   stars.appendChild(s);
-}
+});
 
 /* WHATSAPP */
 function zap() {
