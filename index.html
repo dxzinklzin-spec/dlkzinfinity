@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gojo Portfolio</title>
+<title>Gojo Editor Portfolio</title>
 
 <style>
 /* RESET */
@@ -20,22 +20,78 @@ body {
   overflow-x: hidden;
 }
 
-/* FUNDO GOJO */
-.bg {
+/* ===== LOADING ===== */
+#loading {
   position: fixed;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, #00aaff30, transparent 40%),
-              radial-gradient(circle, #0066ff20, transparent 40%),
-              radial-gradient(circle, #ffffff10, transparent 50%);
-  animation: move 6s linear infinite;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+#bar {
+  width: 200px;
+  height: 6px;
+  background: #222;
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background: #00aaff;
+  transition: 0.2s;
+}
+
+/* ===== FUNDO ESTRELAS AZUIS ===== */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
   z-index: -1;
 }
 
-@keyframes move {
-  0% { transform: translate(0,0); }
-  50% { transform: translate(-5%,5%); }
-  100% { transform: translate(0,0); }
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #00aaff;
+  border-radius: 50%;
+  animation: float 6s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100vh); }
+}
+
+/* ===== EXPANSÃO DOMÍNIO ===== */
+#intro {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, #00aaff30, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  z-index: 9998;
+  opacity: 0;
+  animation: expand 2s forwards;
+}
+
+@keyframes expand {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 /* HEADER */
@@ -50,6 +106,18 @@ header {
   text-shadow: 0 0 10px #00aaff, 0 0 20px #0066ff;
 }
 
+/* FADE IN SCROLL */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* SEÇÕES */
 section {
   max-width: 800px;
@@ -58,13 +126,8 @@ section {
 }
 
 /* TABELA */
-.pricing h2 {
-  margin-bottom: 20px;
-}
-
 .table {
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
   border-radius: 15px;
   overflow: hidden;
 }
@@ -72,27 +135,41 @@ section {
 .row {
   display: flex;
   justify-content: space-between;
-  padding: 15px 20px;
+  padding: 15px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.row:last-child {
-  border-bottom: none;
+.row:last-child { border: none; }
+
+.row span { color: #ccc; }
+.row b { color: #00aaff; }
+
+/* FORM */
+select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 10px;
 }
 
-.row span {
-  color: #ccc;
+textarea {
+  height: 100px;
 }
 
-.row b {
-  color: #00aaff;
-}
-
-/* ABOUT */
-.about p {
-  color: #ccc;
-  margin-bottom: 15px;
-  line-height: 1.6;
+/* BOTÃO */
+button {
+  margin-top: 10px;
+  padding: 12px;
+  width: 100%;
+  background: #00aaff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  display: none;
 }
 
 /* FOOTER */
@@ -102,63 +179,126 @@ footer {
   color: #666;
 }
 </style>
-
 </head>
 
 <body>
 
-<div class="bg"></div>
+<!-- LOADING -->
+<div id="loading">
+  <h2>Carregando...</h2>
+  <div id="bar"><div id="progress"></div></div>
+</div>
 
-<header>
-  <h1 class="glow">SATORU GOJO EDITS</h1>
-  <p>Motion | Anime | Futebol | Foto</p>
+<!-- DOMÍNIO -->
+<div id="intro">DOMÍNIO EXPANDIDO</div>
+
+<!-- ESTRELAS -->
+<div class="stars" id="stars"></div>
+
+<header class="fade">
+  <h1 class="glow">GOJO EDIT PORTFÓLIO</h1>
 </header>
 
-<section class="pricing">
+<!-- PREÇOS -->
+<section class="fade">
   <h2>Preços</h2>
 
   <div class="table">
-    <div class="row">
-      <span>Motion</span>
-      <b>R$ 27,00</b>
-    </div>
-
-    <div class="row">
-      <span>Edit de Anime</span>
-      <b>R$ 15,00</b>
-    </div>
-
-    <div class="row">
-      <span>Edit de Futebol</span>
-      <b>R$ 12,00</b>
-    </div>
-
-    <div class="row">
-      <span>Fotos</span>
-      <b>R$ 7,00</b>
-    </div>
+    <div class="row"><span>Motion</span><b>R$ 27,00</b></div>
+    <div class="row"><span>Anime</span><b>R$ 15,00</b></div>
+    <div class="row"><span>Futebol</span><b>R$ 12,00</b></div>
+    <div class="row"><span>Fotos</span><b>R$ 7,00</b></div>
   </div>
 </section>
 
-<section class="about">
+<!-- SOBRE -->
+<section class="fade">
   <h2>Sobre mim</h2>
 
   <p>
-    Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos. Trabalho transformando imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.
+    Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.
   </p>
 
   <p>
-    Nos edits de anime, busco intensidade e estilo, destacando cada frame com efeitos que combinam com a energia das cenas. No futebol, meu foco é a velocidade, a adrenalina e o impacto de cada jogada, deixando tudo mais dinâmico e envolvente.
+    Trabalho com foco em estética, ritmo e emoção em cada projeto.
   </p>
+</section>
 
-  <p>
-    Também atuo na edição de fotos, criando visuais mais chamativos, com correção de cor, efeitos e uma identidade própria para cada imagem.
-  </p>
+<!-- PEDIDO -->
+<section class="fade">
+  <h2>O que você vai querer?</h2>
+
+  <select id="tipo">
+    <option>Edição de foto</option>
+    <option>Edit de anime</option>
+    <option>Edit de futebol</option>
+    <option>Motion design</option>
+  </select>
+
+  <textarea id="msg" placeholder="Descreva sua ideia..."></textarea>
+
+  <button id="btn" onclick="zap()">Chamar no WhatsApp</button>
 </section>
 
 <footer>
   <p>© Gojo Level Editor</p>
 </footer>
+
+<script>
+
+/* LOADING */
+let p = 0;
+let load = setInterval(() => {
+  p++;
+  document.getElementById("progress").style.width = p + "%";
+  if(p >= 100){
+    clearInterval(load);
+    document.getElementById("loading").style.display = "none";
+  }
+}, 20);
+
+/* DOMÍNIO */
+setTimeout(() => {
+  document.getElementById("intro").style.display = "none";
+}, 2000);
+
+/* ESTRELAS */
+for(let i=0;i<60;i++){
+  let s = document.createElement("div");
+  s.className = "star";
+  s.style.left = Math.random()*100 + "%";
+  s.style.top = Math.random()*100 + "%";
+  document.querySelector(".stars").appendChild(s);
+}
+
+/* FADE IN SCROLL */
+const items = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+  items.forEach(el => {
+    if(el.getBoundingClientRect().top < window.innerHeight - 100){
+      el.classList.add("show");
+    }
+  });
+});
+
+/* BOTÃO WHATSAPP DELAY */
+setTimeout(() => {
+  document.getElementById("btn").style.display = "block";
+}, 3000);
+
+/* WHATSAPP */
+function zap(){
+  let tipo = document.getElementById("tipo").value;
+  let msg = document.getElementById("msg").value;
+
+  let url = "https://wa.me/5511951319587?text=" +
+  encodeURIComponent("Quero: " + tipo + " - " + msg);
+
+  window.open(url);
+}
+
+</script>
 
 </body>
 </html>
