@@ -44,13 +44,6 @@ body {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
 }
 
 .title {
@@ -62,6 +55,7 @@ body {
 #percent {
   font-size: 22px;
   color: #00aaff;
+  margin-top: 5px;
 }
 
 #bar {
@@ -161,7 +155,7 @@ header {
 .row span { color: #ccc; }
 .row b { color: #00aaff; }
 
-/* BOTÃO */
+/* BOTÃO WHATSAPP */
 button {
   width: 100%;
   margin-top: 10px;
@@ -172,16 +166,16 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 0 12px #00aaff, 0 0 25px #0066ff;
+  box-shadow: 0 0 12px #00aaff;
   transition: 0.3s;
 }
 
 button:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #00aaff, 0 0 50px #0066ff;
+  box-shadow: 0 0 25px #00aaff;
 }
 
-/* 🔥 TEXTO SEPARADO FUNCIONANDO */
+/* TEXTO SEPARADO */
 .about-block {
   margin: 16px 0;
   padding: 14px 16px;
@@ -241,20 +235,15 @@ footer {
   </div>
 </section>
 
-<!-- SOBRE MIM (FINAL CORRIGIDO) -->
+<!-- SOBRE MIM -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
   <div class="about-block"><p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.</p></div>
-
   <div class="about-block"><p>Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.</p></div>
-
   <div class="about-block"><p>Nas edits de anime, busco intensidade e identidade visual forte.</p></div>
-
-  <div class="about-block"><p>No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada.</p></div>
-
+  <div class="about-block"><p>No futebol, foco na velocidade e impacto das jogadas.</p></div>
   <div class="about-block"><p>Na edição de fotos, crio visuais profissionais e chamativos.</p></div>
-
   <div class="about-block"><p>Sempre buscando evoluir e elevar o nível de cada projeto.</p></div>
 </section>
 
@@ -292,16 +281,11 @@ let load = setInterval(() => {
   if (p >= 100) {
     clearInterval(load);
 
-    document.getElementById("loading").style.opacity = "0";
+    document.getElementById("loading").style.display = "none";
 
-    setTimeout(() => {
-      document.getElementById("loading").style.display = "none";
-
-      document.querySelectorAll(".fade").forEach((el,i)=>{
-        setTimeout(()=> el.classList.add("show"), i*200);
-      });
-
-    }, 600);
+    document.querySelectorAll(".fade").forEach((el,i)=>{
+      setTimeout(()=> el.classList.add("show"), i*200);
+    });
   }
 }, 20);
 
@@ -311,13 +295,11 @@ const stars = document.getElementById("stars");
 for (let i = 0; i < 120; i++) {
   let s = document.createElement("div");
   s.className = "star";
-
   s.style.left = Math.random()*100 + "%";
   s.style.top = Math.random()*100 + "%";
   s.style.animationDuration = (Math.random()*5+3)+"s";
-
   stars.appendChild(s);
-});
+}
 
 /* WHATSAPP */
 function zap() {
