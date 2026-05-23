@@ -10,208 +10,172 @@
 <style>
 
 /* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
 }
 
-body {
-  background: #05070f;
-  color: white;
-  overflow-x: hidden;
+/* 💥 FUNDO PRETO */
+body{
+  background:#000;
+  color:white;
+  overflow-x:hidden;
 }
 
 /* LOADING */
-#loading {
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, #000 0%, #02040a 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+#loading{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle at center,#000 0%,#02040a 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
 }
 
-.loading-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 30px 40px;
-  border-radius: 18px;
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.1);
-  animation: pulse 1.5s infinite;
+.loading-box{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  padding:30px 40px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.1);
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); opacity: 0.7; }
-  50% { transform: scale(1.05); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.7; }
+.title{
+  font-family:'Orbitron', sans-serif;
+  color:#00aaff;
+  font-size:20px;
 }
 
-.title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 20px;
-  color: #00aaff;
+#percent{
+  font-size:22px;
+  color:#00aaff;
+  margin-top:10px;
 }
 
-#percent {
-  font-size: 22px;
-  color: #00aaff;
+#bar{
+  width:220px;
+  height:6px;
+  background:#111;
+  border-radius:10px;
+  overflow:hidden;
+  margin-top:10px;
 }
 
-#bar {
-  width: 220px;
-  height: 6px;
-  background: #111;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 10px;
+#progress{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,#00aaff,#0066ff);
 }
 
-#progress {
-  width: 0%;
-  height: 100%;
-  background: linear-gradient(90deg, #00aaff, #0066ff);
+/* ✨ ESTRELAS */
+.stars{
+  position:fixed;
+  inset:0;
+  z-index:0;
 }
 
-/* GOJO BACKGROUND */
-.gojo-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  background: url("https://i.imgur.com/9XUQh0P.jpeg") center/cover no-repeat;
-  filter: blur(1px) brightness(0.55);
-  opacity: 0.28;
-  transform: scale(1.05);
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:#4aaaff;
+  border-radius:50%;
+  box-shadow:0 0 6px #4aaaff;
+  animation:float linear infinite;
 }
 
-/* ESTRELAS */
-.stars {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-}
-
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: #4aaaff;
-  border-radius: 50%;
-  animation: float linear infinite;
-  box-shadow: 0 0 6px #4aaaff;
-}
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-120vh); }
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-120vh);}
 }
 
 /* CONTEÚDO */
-header, section, footer {
-  position: relative;
-  z-index: 2;
+header, section, footer{
+  position:relative;
+  z-index:2;
 }
 
-header {
-  text-align: center;
-  padding: 40px 20px;
+header{
+  text-align:center;
+  padding:40px 20px;
 }
 
-.glow {
-  font-size: 38px;
-  color: #00aaff;
-  text-shadow: 0 0 10px #00aaff, 0 0 20px #0066ff;
+.glow{
+  font-size:38px;
+  color:#00aaff;
+  text-shadow:0 0 10px #00aaff,0 0 20px #0066ff;
 }
 
 /* FADE */
-.fade {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 1s ease;
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s ease;
 }
 
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* SEÇÕES */
-section {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
+section{
+  max-width:800px;
+  margin:40px auto;
+  padding:20px;
 }
 
 /* TABELA */
-.table {
-  background: rgba(255,255,255,0.05);
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
+.table{
+  background:rgba(255,255,255,0.05);
+  border-radius:15px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.1);
 }
 
-.row {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+.row{
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-.row:last-child { border-bottom: none; }
+.row:last-child{border:none;}
 
-.row span { color: #ccc; }
-.row b { color: #00aaff; }
+.row span{color:#ccc;}
+.row b{color:#00aaff;}
 
-/* BOTÃO WHATSAPP */
-button {
-  width: 100%;
-  margin-top: 10px;
-  padding: 12px;
-  background: #00aaff;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 0 12px #00aaff, 0 0 25px #0066ff;
-  transition: 0.3s;
+/* ABOUT */
+.about-block{
+  margin:18px 0;
+  padding:12px 15px;
+  background:rgba(255,255,255,0.03);
+  border-radius:10px;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #00aaff, 0 0 50px #0066ff;
+.about-block p{
+  line-height:1.6;
+  color:#ddd;
 }
 
-/* TEXTO ESPAÇADO */
-.about-block {
-  margin: 18px 0;
-  padding: 12px 15px;
-  background: rgba(255,255,255,0.03);
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.about-block:hover {
-  background: rgba(0,170,255,0.08);
-  transform: scale(1.02);
-}
-
-.about-block p {
-  line-height: 1.6;
-  color: #ddd;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #666;
+/* BOTÃO */
+button{
+  width:100%;
+  margin-top:10px;
+  padding:12px;
+  background:#00aaff;
+  border:none;
+  border-radius:10px;
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
 }
 
 </style>
@@ -227,9 +191,6 @@ footer {
     <div id="bar"><div id="progress"></div></div>
   </div>
 </div>
-
-<!-- GOJO -->
-<div class="gojo-bg"></div>
 
 <!-- ESTRELAS -->
 <div class="stars" id="stars"></div>
@@ -254,16 +215,36 @@ footer {
   </div>
 </section>
 
-<!-- SOBRE -->
+<!-- SOBRE MIM (SEPARADO COMO VOCÊ PEDIU) -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
-  <div class="about-block"><p>Sou editor de motion e criador de conteúdo visual.</p></div>
-  <div class="about-block"><p>Trabalho com anime, futebol e edições criativas.</p></div>
-  <div class="about-block"><p>Busco sempre estética, ritmo e impacto visual.</p></div>
+  <div class="about-block">
+    <p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Nas edits de anime, busco intensidade e identidade visual forte, destacando cada frame com efeitos que combinam com a energia das cenas.</p>
+  </div>
+
+  <div class="about-block">
+    <p>No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Também atuo na edição de fotos, criando visuais profissionais e chamativos.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Sempre evoluindo e buscando elevar o nível de cada projeto.</p>
+  </div>
 </section>
 
-<!-- BOTÃO -->
+<!-- CONTATO -->
 <section class="fade">
   <h2>Contato</h2>
   <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
@@ -275,7 +256,7 @@ footer {
 
 <script>
 
-/* LOADING FIXADO (SEM TRAVAR) */
+/* LOADING SEGURO */
 window.addEventListener("load", () => {
 
   const loading = document.getElementById("loading");
@@ -304,39 +285,39 @@ window.addEventListener("load", () => {
         setTimeout(() => {
           loading.style.display = "none";
 
-          document.querySelectorAll(".fade").forEach((el, i) => {
-            setTimeout(() => el.classList.add("show"), i * 150);
+          document.querySelectorAll(".fade").forEach((el,i)=>{
+            setTimeout(()=>el.classList.add("show"), i*150);
           });
 
-        }, 300);
+        },300);
 
-      }, 200);
+      },200);
     }
 
-  }, 25);
+  },25);
 
 });
 
 /* ESTRELAS */
 const stars = document.getElementById("stars");
 
-for (let i = 0; i < 120; i++) {
-  let s = document.createElement("div");
-  s.className = "star";
+for(let i=0;i<120;i++){
+  const s=document.createElement("div");
+  s.className="star";
 
-  s.style.left = Math.random()*100 + "%";
-  s.style.top = Math.random()*100 + "%";
-  s.style.animationDuration = (Math.random()*5+3)+"s";
+  s.style.left=Math.random()*100+"%";
+  s.style.top=Math.random()*100+"%";
+  s.style.animationDuration=(Math.random()*5+3)+"s";
 
   stars.appendChild(s);
 }
 
 /* WHATSAPP */
-function zap() {
+function zap(){
   window.open("https://wa.me/5511951319587");
 }
 
 </script>
 
 </body>
-  </html>
+</html>
