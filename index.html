@@ -1,66 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DLKZ77CC EDITZ</title>
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+body{
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* LOADING */
+#loading{
+  position:fixed;
+  inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  z-index:9999;
+  transition:0.5s ease;
+}
+
+#percent{
+  font-size:30px;
+  color:#00aaff;
+  margin-bottom:10px;
+}
+
+#bar{
+  width:260px;
+  height:6px;
+  background:#111;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+#progress{
+  width:0%;
+  height:100%;
+  background:#00aaff;
+}
+
+/* ESTRELAS */
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:#4aaaff;
+  border-radius:50%;
+  animation:float linear infinite;
+}
+
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-120vh);}
+}
+
+/* CONTEÚDO */
+section{
+  padding:60px 20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+section > *{
+  max-width:650px;
+  width:100%;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(20px);
+  transition:1s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* TABELA */
+.table{
+  background:#111;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  padding:12px;
+  border-bottom:1px solid #222;
+}
+
+.row:last-child{
+  border:none;
+}
+
+.row span{
+  color:#aaa;
+}
+
+.row b{
+  color:#00aaff;
+}
+
+/* BOTÃO */
+button{
+  margin-top:12px;
+  padding:12px;
+  width:100%;
+  background:#00aaff;
+  border:none;
+  border-radius:10px;
+  color:#fff;
+  font-weight:bold;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+<div id="loading">
+  <div id="percent">0%</div>
+  <div id="bar"><div id="progress"></div></div>
+</div>
+
+<!-- ESTRELAS -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+for(let i=0;i<100;i++){
+  const s=document.createElement("div");
+  s.className="star";
+  s.style.left=Math.random()*100+"%";
+  s.style.top=Math.random()*100+"%";
+  s.style.animationDuration=(Math.random()*6+3)+"s";
+  document.body.appendChild(s);
+}
+</script>
 
-  const loading = document.getElementById("loading");
-  const progress = document.getElementById("progress");
-  const percent = document.getElementById("percent");
+<!-- SITE -->
+<section class="fade">
+  <h1>DLKZ77CC EDITZ</h1>
+</section>
 
-  if (!loading || !progress || !percent) {
-    console.log("ERRO: elementos do loading não encontrados");
-    return;
-  }
+<section class="fade">
+  <h2>Preços</h2>
 
-  let p = 0;
+  <div class="table">
+    <div class="row"><span>Edição de Fotos</span><b>R$ 7</b></div>
+    <div class="row"><span>Futebol</span><b>R$ 12</b></div>
+    <div class="row"><span>Anime</span><b>R$ 15</b></div>
+    <div class="row"><span>Roblox</span><b>R$ 19</b></div>
+    <div class="row"><span>Free Fire</span><b>R$ 27</b></div>
+    <div class="row"><span>Motion</span><b>R$ 30</b></div>
+  </div>
+</section>
 
-  const interval = setInterval(() => {
+<section class="fade">
+  <h2>Pedido</h2>
+  <button onclick="zap()">FALAR NO WHATSAPP</button>
+</section>
 
-    p += 5;
+<!-- SCRIPT FINAL -->
+<script>
 
-    if (p > 100) p = 100;
+window.onload=function(){
 
-    progress.style.width = p + "%";
-    percent.innerText = p + "%";
+  const loading=document.getElementById("loading");
+  const progress=document.getElementById("progress");
+  const percent=document.getElementById("percent");
 
-    if (p === 100) {
-      clearInterval(interval);
+  let p=0;
 
-      setTimeout(() => {
-        loading.style.opacity = "0";
+  const load=setInterval(()=>{
 
-        setTimeout(() => {
-          loading.style.display = "none";
+    p++;
 
-          document.querySelectorAll(".fade").forEach((el, i) => {
-            setTimeout(() => el.classList.add("show"), i * 120);
+    progress.style.width=p+"%";
+    percent.innerText=p+"%";
+
+    if(p>=100){
+      clearInterval(load);
+
+      setTimeout(()=>{
+
+        loading.style.opacity="0";
+
+        setTimeout(()=>{
+
+          loading.style.display="none";
+
+          document.querySelectorAll(".fade").forEach((el,i)=>{
+            setTimeout(()=>el.classList.add("show"),i*150);
           });
 
-        }, 300);
+        },300);
 
-      }, 200);
+      },200);
     }
 
-  }, 30);
+  },20);
 
-  /* ESTRELAS */
-  const stars = document.getElementById("stars");
-
-  if (stars) {
-    for (let i = 0; i < 100; i++) {
-      const s = document.createElement("div");
-      s.className = "star";
-
-      s.style.left = Math.random() * 100 + "%";
-      s.style.top = Math.random() * 100 + "%";
-      s.style.animationDuration = (Math.random() * 6 + 3) + "s";
-
-      stars.appendChild(s);
-    }
-  }
-
-});
+};
 
 /* WHATSAPP */
 function zap(){
   window.open("https://wa.me/5511951319587");
 }
+
 </script>
+
+</body>
+</html>
