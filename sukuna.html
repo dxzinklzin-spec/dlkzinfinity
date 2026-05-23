@@ -2,61 +2,56 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Sukuna</title>
+<title>Sukuna - Preços</title>
 
 <style>
 body{
   margin:0;
-  font-family:Arial, sans-serif;
-  background:black;
-  color:#ff0000;
+  font-family:Arial;
+  background:linear-gradient(180deg,#000,#1a0000);
+  color:red;
 }
 
-header{
+.intro{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  animation:fadeIn 2s ease;
   text-align:center;
-  padding:60px 20px;
-  animation: shake 1.5s infinite;
 }
 
-@keyframes shake{
-  0%{transform:translate(0)}
-  25%{transform:translate(2px,-2px)}
-  50%{transform:translate(-2px,2px)}
-  75%{transform:translate(2px,2px)}
-  100%{transform:translate(0)}
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
 }
 
-h1{
-  font-size:70px;
-  text-shadow:0 0 25px red;
-}
-
-.glitch{
-  font-size:18px;
-  text-shadow:2px 0 red, -2px 0 black;
+.intro h1{
+  font-size:28px;
+  text-shadow:0 0 20px red;
 }
 
 .container{
-  width:90%;
-  max-width:900px;
+  width:85%;
   margin:auto;
+  padding-bottom:100px;
 }
 
 section{
-  margin:60px 0;
-  line-height:1.8;
+  margin:70px 0;
 }
 
 .card{
-  padding:20px;
   border:1px solid red;
+  padding:20px;
   border-radius:10px;
   box-shadow:0 0 20px rgba(255,0,0,0.3);
 }
 
 .btn{
   display:inline-block;
-  margin:10px;
+  margin-top:10px;
   padding:12px 20px;
   background:red;
   color:white;
@@ -64,45 +59,45 @@ section{
   border-radius:10px;
 }
 
-.btn:hover{
-  transform:scale(1.05);
-  background:darkred;
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border:none;
+  border-radius:8px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>SUKUNA</h1>
-<p class="glitch">O REI DAS MALDIÇÕES</p>
-</header>
+<div class="intro">
+  <h1>“Bem-vindo ao meu território… aqui você entra, mas não sai fácil.”</h1>
+</div>
 
 <div class="container">
 
 <section class="card">
-<h2>☠ Origem</h2>
-
-<p>
-Sukuna é uma entidade antiga e extremamente perigosa.
-Conhecido como o Rei das Maldições, ele destrói tudo ao seu redor.
-</p>
-
-<p>
-Sua presença causa medo e distorce a energia ao redor.
-</p>
+<h2>☠ Preços de edição</h2>
+<p>• Edit simples: R$10</p>
+<p>• Edit anime: R$20</p>
+<p>• Edit premium: R$35+</p>
 </section>
 
 <section class="card">
-<h2>⚠ Aviso</h2>
+<h2>📩 Descreva sua edit</h2>
+<textarea placeholder="Escreva o que você quer na edit..."></textarea>
+</section>
 
-<p class="glitch">
-VOCÊ ENTROU EM UM DOMÍNIO PROIBIDO...
-</p>
+<section class="card">
+<h2>💬 Finalizar pedido</h2>
 
-<p>
-Poucos conseguem sobreviver à sua presença.
-</p>
+<a class="btn"
+href="https://wa.me/5511951319587?text=Quero%20uma%20edit%20-%20detalhes%20no%20chat"
+target="_blank">
+📲 Enviar para WhatsApp
+</a>
+
 </section>
 
 <section>
