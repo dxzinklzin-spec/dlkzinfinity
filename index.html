@@ -24,7 +24,7 @@ body {
   position: relative;
 }
 
-/* ===== LOADING ===== */
+/* LOADING */
 #loading {
   position: fixed;
   inset: 0;
@@ -40,18 +40,11 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-
   padding: 30px 40px;
   border-radius: 18px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
-  animation: pop 0.8s ease;
-}
-
-@keyframes pop {
-  from { transform: scale(0.8); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
 }
 
 .title {
@@ -82,12 +75,11 @@ body {
   background: linear-gradient(90deg, #00aaff, #0066ff);
 }
 
-/* ===== GOJO FUNDO ===== */
+/* GOJO BACKGROUND */
 .gojo-bg {
   position: fixed;
   inset: 0;
   z-index: 0;
-
   background: url("https://images5.alphacoders.com/131/1314707.jpeg") center/cover no-repeat;
   filter: blur(1px) brightness(0.5);
   opacity: 0.22;
@@ -196,12 +188,6 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background: #0088ff;
-  transform: scale(1.02);
 }
 
 /* FOOTER */
@@ -225,13 +211,13 @@ footer {
   </div>
 </div>
 
-<!-- FUNDO GOJO -->
+<!-- GOJO -->
 <div class="gojo-bg"></div>
 
 <!-- ESTRELAS -->
 <div class="stars" id="stars"></div>
 
-<!-- CONTEÚDO -->
+<!-- HEADER -->
 <header class="fade">
   <h1 class="glow">DLKZ77CC EDITZ</h1>
   <p>Motion | Anime | Futebol | Foto | Games</p>
@@ -251,18 +237,23 @@ footer {
   </div>
 </section>
 
-<!-- SOBRE -->
+<!-- SOBRE MIM (CORRIGIDO) -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
   <p>
     Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.
-    Trabalho transformando imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.
+    Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.
   </p>
 
   <p>
-    Nas edits de anime, busco intensidade e estilo. No futebol, foco na velocidade e impacto. Na edição de fotos,
-    crio identidade visual única e profissional.
+    Nas edits de anime, busco intensidade e identidade visual forte, destacando cada frame com efeitos que combinam com a energia das cenas.
+    No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada, deixando tudo mais dinâmico e envolvente.
+  </p>
+
+  <p>
+    Também atuo na edição de fotos, aprimorando cores, contraste e estilo para criar visuais mais chamativos e profissionais.
+    Estou sempre evoluindo, testando novas ideias e buscando elevar o nível de cada projeto.
   </p>
 </section>
 
@@ -294,7 +285,6 @@ let p = 0;
 
 let load = setInterval(() => {
   p++;
-
   document.getElementById("progress").style.width = p + "%";
   document.getElementById("percent").innerText = p + "%";
 
@@ -312,7 +302,6 @@ let load = setInterval(() => {
 
     }, 600);
   }
-
 }, 20);
 
 /* ESTRELAS */
@@ -334,7 +323,7 @@ function zap() {
   let tipo = document.getElementById("tipo").value;
   let msg = document.getElementById("msg").value;
 
-  let url = "https://wa.me/5511951319587?text=" +
+  let url = "https://wa.me/5511999999999?text=" +
   encodeURIComponent("Quero uma edição de: " + tipo + " | Detalhes: " + msg);
 
   window.open(url);
