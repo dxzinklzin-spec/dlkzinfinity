@@ -254,37 +254,18 @@ footer {
   </div>
 </section>
 
-<!-- SOBRE MIM ESPAÇADO -->
+<!-- SOBRE -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
-  <div class="about-block"><p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.</p></div>
-
-  <div class="about-block"><p>Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.</p></div>
-
-  <div class="about-block"><p>Nas edits de anime, busco intensidade e identidade visual forte.</p></div>
-
-  <div class="about-block"><p>No futebol, foco na velocidade, na adrenalina e no impacto das jogadas.</p></div>
-
-  <div class="about-block"><p>Na edição de fotos, crio visuais profissionais e chamativos.</p></div>
-
-  <div class="about-block"><p>Sempre buscando evoluir e elevar o nível de cada projeto.</p></div>
+  <div class="about-block"><p>Sou editor de motion e criador de conteúdo visual.</p></div>
+  <div class="about-block"><p>Trabalho com anime, futebol e edições criativas.</p></div>
+  <div class="about-block"><p>Busco sempre estética, ritmo e impacto visual.</p></div>
 </section>
 
-<!-- PEDIDO -->
+<!-- BOTÃO -->
 <section class="fade">
-  <h2>O que você quer na edição?</h2>
-
-  <select id="tipo">
-    <option>Anime</option>
-    <option>Futebol</option>
-    <option>Motion</option>
-    <option>Free Fire</option>
-    <option>Roblox</option>
-  </select>
-
-  <textarea id="msg" placeholder="Descreva sua ideia..."></textarea>
-
+  <h2>Contato</h2>
   <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
 </section>
 
@@ -294,29 +275,47 @@ footer {
 
 <script>
 
-/* LOADING */
-let p = 0;
+/* LOADING FIXADO (SEM TRAVAR) */
+window.addEventListener("load", () => {
 
-let load = setInterval(() => {
-  p++;
-  document.getElementById("progress").style.width = p + "%";
-  document.getElementById("percent").innerText = p + "%";
+  const loading = document.getElementById("loading");
+  const progress = document.getElementById("progress");
+  const percent = document.getElementById("percent");
 
-  if (p >= 100) {
-    clearInterval(load);
+  let p = 0;
 
-    document.getElementById("loading").style.opacity = "0";
+  const interval = setInterval(() => {
 
-    setTimeout(() => {
-      document.getElementById("loading").style.display = "none";
+    p += 2;
 
-      document.querySelectorAll(".fade").forEach((el,i)=>{
-        setTimeout(()=> el.classList.add("show"), i*200);
-      });
+    if (p > 100) p = 100;
 
-    }, 600);
-  }
-}, 20);
+    progress.style.width = p + "%";
+    percent.innerText = p + "%";
+
+    if (p === 100) {
+
+      clearInterval(interval);
+
+      setTimeout(() => {
+
+        loading.style.opacity = "0";
+
+        setTimeout(() => {
+          loading.style.display = "none";
+
+          document.querySelectorAll(".fade").forEach((el, i) => {
+            setTimeout(() => el.classList.add("show"), i * 150);
+          });
+
+        }, 300);
+
+      }, 200);
+    }
+
+  }, 25);
+
+});
 
 /* ESTRELAS */
 const stars = document.getElementById("stars");
@@ -330,20 +329,14 @@ for (let i = 0; i < 120; i++) {
   s.style.animationDuration = (Math.random()*5+3)+"s";
 
   stars.appendChild(s);
-});
+}
 
 /* WHATSAPP */
 function zap() {
-  let tipo = document.getElementById("tipo").value;
-  let msg = document.getElementById("msg").value;
-
-  let url = "https://wa.me/5511951319587?text=" +
-  encodeURIComponent("Quero uma edição de: " + tipo + " | Detalhes: " + msg);
-
-  window.open(url);
+  window.open("https://wa.me/5511951319587");
 }
 
 </script>
 
 </body>
-</html>
+  </html>
