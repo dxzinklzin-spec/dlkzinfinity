@@ -1,11 +1,164 @@
-<section class="card gojo">
-  <h2>Gojo Project</h2>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gojo Portfolio</title>
+
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #05070f;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* FUNDO GOJO */
+.bg {
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, #00aaff30, transparent 40%),
+              radial-gradient(circle, #0066ff20, transparent 40%),
+              radial-gradient(circle, #ffffff10, transparent 50%);
+  animation: move 6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes move {
+  0% { transform: translate(0,0); }
+  50% { transform: translate(-5%,5%); }
+  100% { transform: translate(0,0); }
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.glow {
+  font-size: 38px;
+  color: #00aaff;
+  text-shadow: 0 0 10px #00aaff, 0 0 20px #0066ff;
+}
+
+/* SEÇÕES */
+section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* TABELA */
+.pricing h2 {
+  margin-bottom: 20px;
+}
+
+.table {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row span {
+  color: #ccc;
+}
+
+.row b {
+  color: #00aaff;
+}
+
+/* ABOUT */
+.about p {
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<header>
+  <h1 class="glow">SATORU GOJO EDITS</h1>
+  <p>Motion | Anime | Futebol | Foto</p>
+</header>
+
+<section class="pricing">
+  <h2>Preços</h2>
+
+  <div class="table">
+    <div class="row">
+      <span>Motion</span>
+      <b>R$ 27,00</b>
+    </div>
+
+    <div class="row">
+      <span>Edit de Anime</span>
+      <b>R$ 15,00</b>
+    </div>
+
+    <div class="row">
+      <span>Edit de Futebol</span>
+      <b>R$ 12,00</b>
+    </div>
+
+    <div class="row">
+      <span>Fotos</span>
+      <b>R$ 7,00</b>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <h2>Sobre mim</h2>
 
   <p>
-    Edits limpos, fluidos e com estética bem trabalhada. Foco em transições suaves, ritmo sincronizado e construção visual elegante.
+    Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos. Trabalho transformando imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.
   </p>
 
   <p>
-    A ideia é manter leveza e organização visual, com impacto através da fluidez e da sincronização com o som.
+    Nos edits de anime, busco intensidade e estilo, destacando cada frame com efeitos que combinam com a energia das cenas. No futebol, meu foco é a velocidade, a adrenalina e o impacto de cada jogada, deixando tudo mais dinâmico e envolvente.
+  </p>
+
+  <p>
+    Também atuo na edição de fotos, criando visuais mais chamativos, com correção de cor, efeitos e uma identidade própria para cada imagem.
   </p>
 </section>
+
+<footer>
+  <p>© Gojo Level Editor</p>
+</footer>
+
+</body>
+</html>
