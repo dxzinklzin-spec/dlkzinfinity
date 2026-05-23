@@ -129,7 +129,7 @@ section{
   padding:20px;
 }
 
-/* TABELA */
+/* TABELA (SEU MODELO EXATO) */
 .table{
   background:rgba(255,255,255,0.05);
   border-radius:15px;
@@ -157,6 +157,16 @@ section{
   border-radius:10px;
 }
 
+/* FORM */
+textarea, select{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
 /* BOTÃO */
 button{
   width:100%;
@@ -168,16 +178,6 @@ button{
   color:white;
   font-weight:bold;
   cursor:pointer;
-}
-
-/* FORM */
-textarea, select{
-  width:100%;
-  margin-top:10px;
-  padding:10px;
-  border-radius:8px;
-  border:none;
-  outline:none;
 }
 
 /* FOOTER */
@@ -192,7 +192,7 @@ footer{
 
 <body>
 
-<!-- LOADING -->
+<!-- LOADING (CORRIGIDO) -->
 <div id="loading">
   <div class="loading-box">
     <div class="title">SEJA BEM-VINDO</div>
@@ -210,7 +210,7 @@ footer{
   <p>Motion | Anime | Futebol | Foto</p>
 </header>
 
-<!-- PREÇOS (SÓ ISSO FOI ALTERADO) -->
+<!-- PREÇOS (SÓ O QUE VOCÊ PEDIU) -->
 <section class="fade">
   <h2>Preços</h2>
 
@@ -251,20 +251,31 @@ footer{
   </div>
 </section>
 
-<!-- CONTATO -->
+<!-- PEDIDO DO CLIENTE (ADICIONADO COMO PEDIDO) -->
 <section class="fade">
-  <h2>Contato</h2>
-  <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
+  <h2>Pedido da edição</h2>
+
+  <select id="tipo">
+    <option>Anime</option>
+    <option>Futebol</option>
+    <option>Motion</option>
+    <option>Foto</option>
+  </select>
+
+  <textarea id="msg" placeholder="Descreva o que você quer na edição..."></textarea>
+
+  <button onclick="zap()">ENVIAR NO WHATSAPP</button>
 </section>
 
+<!-- FOOTER -->
 <footer>
   © DLKZ77CC EDITZ
 </footer>
 
 <script>
 
-/* LOADING */
-window.addEventListener("load", () => {
+/* LOADING SEM BUG */
+document.addEventListener("DOMContentLoaded", () => {
 
   const loading = document.getElementById("loading");
   const progress = document.getElementById("progress");
@@ -281,7 +292,7 @@ window.addEventListener("load", () => {
     progress.style.width = p + "%";
     percent.innerText = p + "%";
 
-    if (p === 100) {
+    if (p >= 100) {
 
       clearInterval(interval);
 
@@ -321,7 +332,13 @@ for(let i=0;i<120;i++){
 
 /* WHATSAPP */
 function zap(){
-  window.open("https://wa.me/5511951319587");
+  const tipo=document.getElementById("tipo").value;
+  const msg=document.getElementById("msg").value;
+
+  const url="https://wa.me/5511951319587?text="+
+  encodeURIComponent("Quero uma edição de: "+tipo+" | Detalhes: "+msg);
+
+  window.open(url);
 }
 
 </script>
