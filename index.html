@@ -93,14 +93,18 @@ body {
   to { transform: translateY(-120vh); }
 }
 
-/* GOJO BACKGROUND */
+/* ===== GOJO FUNDO (ATRÁS DO CONTEÚDO) ===== */
 .gojo-bg {
   position: fixed;
   width: 100%;
   height: 100%;
-  background: url("https://i.imgur.com/4QfKuz1.png") center/contain no-repeat;
-  opacity: 0.12;
   z-index: -1;
+
+  background: url("https://images5.alphacoders.com/131/1314707.jpeg") center/cover no-repeat;
+
+  filter: blur(1px) brightness(0.55);
+  opacity: 0.25;
+  transform: scale(1.05);
 }
 
 /* HEADER */
@@ -182,7 +186,7 @@ footer {
   <div id="bar"><div id="progress"></div></div>
 </div>
 
-<!-- BACKGROUND -->
+<!-- FUNDO GOJO -->
 <div class="gojo-bg"></div>
 
 <!-- ESTRELAS -->
@@ -258,7 +262,7 @@ let load = setInterval(() => {
 /* ESTRELAS */
 const stars = document.getElementById("stars");
 
-for (let i = 0; i < 100; i++) {
+for (let i = 0; i < 120; i++) {
   let s = document.createElement("div");
   s.className = "star";
 
