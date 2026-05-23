@@ -33,18 +33,52 @@ body {
   flex-direction: column;
   z-index: 9999;
   gap: 10px;
+  transition: 0.6s;
 }
 
-#loading h2 {
+/* FRASE EXPANSÃO DE DOMÍNIO */
+.title {
   color: #00aaff;
   letter-spacing: 2px;
+  font-size: 20px;
+
+  opacity: 0;
+  animation: fadeTitle 1.2s ease forwards;
 }
 
+@keyframes fadeTitle {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* NÚMERO */
 #percent {
   font-size: 22px;
   color: #00aaff;
+
+  opacity: 0;
+  animation: fadeNumber 0.8s ease forwards;
+  animation-delay: 0.3s;
 }
 
+@keyframes fadeNumber {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* BARRA */
 #bar {
   width: 220px;
   height: 6px;
@@ -59,7 +93,7 @@ body {
   background: #00aaff;
 }
 
-/* ===== ESTRELAS (MOVIMENTO CONTÍNUO ESTILO PROFISSIONAL) ===== */
+/* ===== ESTRELAS (MOVIMENTO SUAVE) ===== */
 .stars {
   position: fixed;
   width: 100%;
@@ -91,7 +125,7 @@ header {
   padding: 40px 20px;
 }
 
-/* FADE IN (SÓ APÓS LOADING) */
+/* FADE IN (SÓ DEPOIS DO LOADING) */
 .fade {
   opacity: 0;
   transform: translateY(30px);
@@ -159,7 +193,7 @@ footer {
 
 <!-- LOADING -->
 <div id="loading">
-  <h2>EXPANSÃO DE DOMÍNIO</h2>
+  <h2 class="title">EXPANSÃO DE DOMÍNIO</h2>
   <div id="percent">0%</div>
   <div id="bar"><div id="progress"></div></div>
 </div>
@@ -218,21 +252,24 @@ let load = setInterval(() => {
   if (p >= 100) {
     clearInterval(load);
 
-    document.getElementById("loading").style.display = "none";
+    document.getElementById("loading").style.opacity = "0";
 
-    /* FADE IN SÓ DEPOIS DO LOADING */
-    const items = document.querySelectorAll(".fade");
+    setTimeout(() => {
+      document.getElementById("loading").style.display = "none";
 
-    items.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add("show");
-      }, i * 200);
-    });
+      // FADE IN SÓ DEPOIS DO LOADING
+      document.querySelectorAll(".fade").forEach((el, i) => {
+        setTimeout(() => {
+          el.classList.add("show");
+        }, i * 200);
+      });
+
+    }, 600);
   }
 
 }, 20);
 
-/* ESTRELAS SUAVES EM MOVIMENTO */
+/* ESTRELAS SUAVES */
 const stars = document.getElementById("stars");
 
 for (let i = 0; i < 100; i++) {
