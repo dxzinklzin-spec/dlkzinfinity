@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Editor Gojo</title>
+<title>Editor Gojo - Portfólio</title>
 
 <style>
 body{
@@ -13,124 +13,135 @@ body{
   overflow-x:hidden;
 }
 
-/* entrada */
-.intro{
+/* INTRO NETFLIX */
+#intro{
+  position:fixed;
+  width:100%;
   height:100vh;
+  background:black;
   display:flex;
   align-items:center;
   justify-content:center;
+  z-index:9999;
+  animation:fadeOut 2.5s forwards;
+  animation-delay:2s;
+}
+
+#intro h1{
+  color:white;
+  font-size:22px;
+  letter-spacing:3px;
+}
+
+@keyframes fadeOut{
+  to{opacity:0;visibility:hidden;}
+}
+
+/* layout */
+.hero{
+  height:100vh;
+  display:flex;
   flex-direction:column;
-  animation:fadeIn 2s ease;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
 }
 
-@keyframes fadeIn{
-  from{opacity:0}
-  to{opacity:1}
-}
-
-.intro h1{
-  font-size:35px;
+.hero h1{
+  font-size:60px;
   color:#00ccff;
 }
 
-/* scroll */
-.container{
-  width:85%;
-  margin:auto;
-  padding-bottom:100px;
-}
-
-section{
-  margin:80px 0;
-  opacity:0;
-  transform:translateY(40px);
-  animation:fadeUp 1s forwards;
-}
-
-section:nth-child(2){animation-delay:0.3s}
-section:nth-child(3){animation-delay:0.6s}
-section:nth-child(4){animation-delay:0.9s}
-
-@keyframes fadeUp{
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-h2{
-  color:#00ccff;
+.hero p{
+  opacity:0.8;
 }
 
 .btn{
-  display:inline-block;
-  margin:10px;
-  padding:12px 20px;
+  margin-top:20px;
+  padding:15px 25px;
   background:#00ccff;
   color:black;
-  text-decoration:none;
   border-radius:10px;
+  text-decoration:none;
   font-weight:bold;
 }
 
-.stars button{
-  font-size:25px;
-  background:none;
-  border:none;
-  cursor:pointer;
-  color:gold;
+.section{
+  width:85%;
+  margin:auto;
+  padding:80px 0;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:15px;
+  margin:20px 0;
+}
+
+.sukuna-btn{
+  display:inline-block;
+  padding:15px 25px;
+  background:red;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
 }
 </style>
 </head>
 
 <body>
 
-<div class="intro">
-  <h1>EXPANSÃO DE DOMÍNIO...</h1>
-  <p>Gojo entrou no campo de apresentação</p>
+<!-- INTRO -->
+<div id="intro">
+  <h1>CARREGANDO PORTFÓLIO...</h1>
 </div>
 
-<div class="container">
-
-<section>
-<h2>😎 Quem sou eu</h2>
-<p>Eu sou um editor estilo anime, rápido, criativo e com visão diferenciada.</p>
-</section>
-
-<section>
-<h2>🔥 Demonstração</h2>
-<p>Aqui você coloca seus vídeos depois (CapCut, edits etc).</p>
-</section>
-
-<section>
-<h2>💰 Serviços</h2>
-<p>• Edit simples</p>
-<p>• Edit avançado anime</p>
-<p>• Transições + efeitos</p>
-</section>
-
-<section>
-<h2>📩 Orçamento</h2>
-<a class="btn" href="sukuna.html">Ver preços / Sukuna</a>
-</section>
-
-<section>
-<h2>📞 Contato rápido</h2>
-<a class="btn" href="https://wa.me/5511951319587?text=Quero%20uma%20edit" target="_blank">
-💬 Conversar no WhatsApp
-</a>
-</section>
-
-<section>
-<h2>⭐ Avaliação</h2>
-<div class="stars">
-  <button>★</button>
-  <button>★</button>
-  <button>★</button>
-  <button>★</button>
-  <button>★</button>
+<!-- HERO -->
+<div class="hero">
+  <h1>EXPANSÃO DE DOMÍNIO</h1>
+  <p>Gojo entrou no campo de edição</p>
+  <a class="btn" href="#conteudo">Ver portfólio</a>
 </div>
-</section>
+
+<!-- CONTEÚDO -->
+<div id="conteudo" class="section">
+
+  <div class="card">
+    <h2>😎 Sobre mim</h2>
+    <p>Editor de anime estilo profissional, foco em transições, storytelling e impacto visual.</p>
+  </div>
+
+  <div class="card">
+    <h2>🔥 Demonstração</h2>
+
+    <!-- VÍDEO TIKTOK EMBUTIDO -->
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/video/ZSx5Xae46">
+      <section></section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+
+  </div>
+
+  <div class="card">
+    <h2>💰 Serviços</h2>
+    <p>• Edit simples</p>
+    <p>• Edit anime</p>
+    <p>• Edit premium</p>
+  </div>
+
+  <div class="card">
+    <h2>🔴 Acesso Sukuna</h2>
+    <a class="sukuna-btn" href="sukuna.html">Entrar no domínio do Sukuna</a>
+  </div>
+
+  <div class="card">
+    <h2>📲 Contato</h2>
+    <a class="btn" href="https://wa.me/5511951319587" target="_blank">
+      Falar no WhatsApp
+    </a>
+  </div>
 
 </div>
 
