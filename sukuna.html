@@ -1,114 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>Sukuna - Preços</title>
+<section class="card sukuna">
+  <h2>Sukuna Project</h2>
 
-<style>
-body{
-  margin:0;
-  font-family:Arial;
-  background:radial-gradient(circle,#1a0000,#000);
-  color:red;
-}
+  <p>
+    Edits agressivos, caóticos e com impacto visual máximo. Uso de cortes rápidos, glitch e efeitos pesados para criar intensidade.
+  </p>
 
-.hero{
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
+  <p>
+    Cada frame é pensado para transmitir energia, força e presença, criando um estilo marcante e dominante.
+  </p>
 
-.hero h1{
-  font-size:45px;
-  text-shadow:0 0 20px red;
-}
-
-.section{
-  width:85%;
-  margin:auto;
-  padding:60px 0;
-}
-
-.card{
-  background:rgba(255,0,0,0.05);
-  border:1px solid red;
-  padding:20px;
-  border-radius:15px;
-  margin:20px 0;
-}
-
-input, textarea{
-  width:100%;
-  padding:10px;
-  margin-top:10px;
-  border:none;
-  border-radius:8px;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:15px 25px;
-  background:red;
-  color:white;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  cursor:pointer;
-}
-</style>
-</head>
-
-<body>
-
-<div class="hero">
-  <h1>“Bem-vindo ao meu território…”</h1>
-  <p>Escolha seu pedido com cuidado</p>
-</div>
-
-<div class="section">
-
-  <div class="card">
-    <h2>💰 Preços</h2>
-    <p>• Edit simples — R$10</p>
-    <p>• Edit anime — R$20</p>
-    <p>• Edit premium — R$35+</p>
-  </div>
-
-  <div class="card">
-    <h2>📩 Seu pedido</h2>
-
-    <input id="tipo" placeholder="Tipo de edição">
-    <input id="tempo" placeholder="Duração do vídeo">
-    <textarea id="detalhes" placeholder="Descreva sua edit"></textarea>
-
-    <button class="btn" onclick="enviar()">Enviar para WhatsApp</button>
-  </div>
-
-  <div class="card">
-    <a class="btn" href="index.html">Voltar</a>
-  </div>
-
-</div>
-
-<script>
-function enviar(){
-  let tipo = document.getElementById("tipo").value;
-  let tempo = document.getElementById("tempo").value;
-  let detalhes = document.getElementById("detalhes").value;
-
-  let msg =
-  `Pedido de edit:%0A` +
-  `Tipo: ${tipo}%0A` +
-  `Tempo: ${tempo}%0A` +
-  `Detalhes: ${detalhes}`;
-
-  window.open("https://wa.me/5511951319587?text=" + msg);
-}
-</script>
-
-</body>
-</html>
+  <a class="btn" href="https://wa.me/5511951319587" target="_blank">
+    Chamar no WhatsApp
+  </a>
+</section>
