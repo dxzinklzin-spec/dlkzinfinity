@@ -36,12 +36,16 @@ body {
 }
 
 .loading-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
   padding: 30px 40px;
   border-radius: 18px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
-  text-align: center;
   animation: pop 0.8s ease;
 }
 
@@ -83,6 +87,7 @@ body {
   position: fixed;
   inset: 0;
   z-index: 0;
+
   background: url("https://images5.alphacoders.com/131/1314707.jpeg") center/cover no-repeat;
   filter: blur(1px) brightness(0.5);
   opacity: 0.22;
@@ -181,7 +186,6 @@ select, textarea {
 
 textarea { height: 100px; }
 
-/* BOTÃO AZUL */
 button {
   width: 100%;
   margin-top: 10px;
@@ -221,7 +225,7 @@ footer {
   </div>
 </div>
 
-<!-- GOJO -->
+<!-- FUNDO GOJO -->
 <div class="gojo-bg"></div>
 
 <!-- ESTRELAS -->
@@ -233,6 +237,7 @@ footer {
   <p>Motion | Anime | Futebol | Foto | Games</p>
 </header>
 
+<!-- PREÇOS -->
 <section class="fade">
   <h2>Preços</h2>
 
@@ -246,10 +251,26 @@ footer {
   </div>
 </section>
 
+<!-- SOBRE -->
+<section class="fade">
+  <h2>Sobre mim</h2>
+
+  <p>
+    Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.
+    Trabalho transformando imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.
+  </p>
+
+  <p>
+    Nas edits de anime, busco intensidade e estilo. No futebol, foco na velocidade e impacto. Na edição de fotos,
+    crio identidade visual única e profissional.
+  </p>
+</section>
+
+<!-- PEDIDO -->
 <section class="fade">
   <h2>O que você quer na edição?</h2>
 
-  <select>
+  <select id="tipo">
     <option>Anime</option>
     <option>Futebol</option>
     <option>Motion</option>
@@ -257,7 +278,7 @@ footer {
     <option>Roblox</option>
   </select>
 
-  <textarea placeholder="Descreva sua ideia..."></textarea>
+  <textarea id="msg" placeholder="Descreva sua ideia..."></textarea>
 
   <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
 </section>
@@ -310,8 +331,8 @@ for (let i = 0; i < 120; i++) {
 
 /* WHATSAPP */
 function zap() {
-  let tipo = document.querySelector("select").value;
-  let msg = document.querySelector("textarea").value;
+  let tipo = document.getElementById("tipo").value;
+  let msg = document.getElementById("msg").value;
 
   let url = "https://wa.me/5511951319587?text=" +
   encodeURIComponent("Quero uma edição de: " + tipo + " | Detalhes: " + msg);
