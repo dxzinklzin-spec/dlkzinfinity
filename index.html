@@ -1,313 +1,66 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DLKZ77CC EDITZ</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
-
-<style>
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-body {
-  background: #000;
-  color: white;
-  overflow-x: hidden;
-}
-
-/* LOADING */
-#loading {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle, #0a0a0a, #000);
-  z-index: 9999;
-}
-
-.loading-box {
-  text-align: center;
-  padding: 35px 45px;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-}
-
-.title {
-  font-family: Orbitron;
-  color: #00aaff;
-  font-size: 20px;
-}
-
-#percent {
-  font-size: 26px;
-  margin-top: 10px;
-  color: #00aaff;
-}
-
-#bar {
-  width: 240px;
-  height: 6px;
-  background: #111;
-  border-radius: 20px;
-  overflow: hidden;
-  margin-top: 12px;
-}
-
-#progress {
-  width: 0%;
-  height: 100%;
-  background: #00aaff;
-}
-
-/* ESTRELAS */
-.stars {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
-
-.star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: #4aaaff;
-  border-radius: 50%;
-  animation: float linear infinite;
-  box-shadow: 0 0 6px #4aaaff;
-}
-
-@keyframes float {
-  from { transform: translateY(0); }
-  to { transform: translateY(-120vh); }
-}
-
-/* LAYOUT */
-header, section, footer {
-  position: relative;
-  z-index: 2;
-}
-
-header {
-  text-align: center;
-  padding: 60px 20px;
-}
-
-.glow {
-  font-size: 40px;
-  color: #00aaff;
-  text-shadow: 0 0 12px #00aaff;
-}
-
-section {
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-section > * {
-  max-width: 650px;
-  width: 100%;
-}
-
-/* FADE */
-.fade {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: 1s ease;
-}
-
-.fade.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* TABELA */
-.table {
-  background: rgba(255,255,255,0.04);
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
-  overflow: hidden;
-}
-
-.row {
-  display: flex;
-  justify-content: space-between;
-  padding: 14px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.row:last-child { border-bottom: none; }
-
-.row span { color: #bbb; }
-.row b { color: #00aaff; }
-
-/* TEXTO */
-.about-block {
-  margin: 12px 0;
-  padding: 14px;
-  background: rgba(255,255,255,0.03);
-  border-radius: 10px;
-}
-
-.about-block p {
-  line-height: 1.7;
-  color: #ddd;
-}
-
-/* BOTÃO */
-button {
-  width: 100%;
-  padding: 14px;
-  margin-top: 12px;
-  background: #00aaff;
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 40px;
-  color: #666;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- LOADING -->
-<div id="loading">
-  <div class="loading-box">
-    <div class="title">BEM VINDO AO SITE</div>
-    <div id="percent">0%</div>
-    <div id="bar"><div id="progress"></div></div>
-  </div>
-</div>
-
-<!-- ESTRELAS -->
-<div class="stars" id="stars"></div>
-
-<header class="fade">
-  <h1 class="glow">DLKZ77CC EDITZ</h1>
-  <p>Motion | Anime | Futebol | Foto</p>
-</header>
-
-<section class="fade">
-  <h2>Preços</h2>
-
-  <div class="table">
-    <div class="row"><span>Edição de Fotos</span><b>R$ 7,00</b></div>
-    <div class="row"><span>Edit de Futebol</span><b>R$ 12,00</b></div>
-    <div class="row"><span>Edit de Anime</span><b>R$ 15,00</b></div>
-    <div class="row"><span>Roblox</span><b>R$ 19,00</b></div>
-    <div class="row"><span>Free Fire</span><b>R$ 27,00</b></div>
-    <div class="row"><span>Motion</span><b>R$ 30,00</b></div>
-  </div>
-</section>
-
-<!-- TEXTO ORIGINAL SEM RESUMO -->
-<section class="fade">
-  <h2>Sobre mim</h2>
-
-  <div class="about-block">
-    <p>
-Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos. Trabalho transformando imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.
-    </p>
-  </div>
-
-  <div class="about-block">
-    <p>
-Nas edits de anime, busco intensidade e identidade visual forte, destacando cada frame com efeitos que combinam com a energia das cenas. No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada, deixando tudo mais dinâmico e envolvente.
-    </p>
-  </div>
-
-  <div class="about-block">
-    <p>
-Também atuo na edição de fotos, aprimorando cores, contraste e estilo para criar visuais mais chamativos e profissionais. Estou sempre evoluindo, testando novas ideias e buscando elevar o nível de cada projeto.
-    </p>
-  </div>
-
-</section>
-
-<section class="fade">
-  <h2>Pedido</h2>
-
-  <textarea style="width:100%;padding:12px;border-radius:8px;background:#111;color:white;border:none;" placeholder="Descreva sua edição..."></textarea>
-
-  <button onclick="zap()">FALAR NO WHATSAPP</button>
-</section>
-
-<footer>
-  <p>© DLKZ77CC EDITZ</p>
-</footer>
-
 <script>
+document.addEventListener("DOMContentLoaded", () => {
 
-/* LOADING SEM BUG */
-let p = 0;
+  const loading = document.getElementById("loading");
+  const progress = document.getElementById("progress");
+  const percent = document.getElementById("percent");
 
-const progress = document.getElementById("progress");
-const percent = document.getElementById("percent");
-const loading = document.getElementById("loading");
-
-let load = setInterval(() => {
-
-  if (p >= 100) {
-    clearInterval(load);
-
-    loading.style.opacity = "0";
-
-    setTimeout(() => {
-      loading.style.display = "none";
-
-      document.querySelectorAll(".fade").forEach((el,i)=>{
-        setTimeout(()=> el.classList.add("show"), i*150);
-      });
-
-    }, 500);
-
+  if (!loading || !progress || !percent) {
+    console.log("ERRO: elementos do loading não encontrados");
     return;
   }
 
-  p += 2;
-  progress.style.width = p + "%";
-  percent.innerText = p + "%";
+  let p = 0;
 
-}, 30);
+  const interval = setInterval(() => {
 
-/* ESTRELAS */
-const stars = document.getElementById("stars");
+    p += 5;
 
-for (let i = 0; i < 120; i++) {
-  let s = document.createElement("div");
-  s.className = "star";
+    if (p > 100) p = 100;
 
-  s.style.left = Math.random()*100 + "%";
-  s.style.top = Math.random()*100 + "%";
-  s.style.animationDuration = (Math.random()*6+4)+"s";
+    progress.style.width = p + "%";
+    percent.innerText = p + "%";
 
-  stars.appendChild(s);
+    if (p === 100) {
+      clearInterval(interval);
+
+      setTimeout(() => {
+        loading.style.opacity = "0";
+
+        setTimeout(() => {
+          loading.style.display = "none";
+
+          document.querySelectorAll(".fade").forEach((el, i) => {
+            setTimeout(() => el.classList.add("show"), i * 120);
+          });
+
+        }, 300);
+
+      }, 200);
+    }
+
+  }, 30);
+
+  /* ESTRELAS */
+  const stars = document.getElementById("stars");
+
+  if (stars) {
+    for (let i = 0; i < 100; i++) {
+      const s = document.createElement("div");
+      s.className = "star";
+
+      s.style.left = Math.random() * 100 + "%";
+      s.style.top = Math.random() * 100 + "%";
+      s.style.animationDuration = (Math.random() * 6 + 3) + "s";
+
+      stars.appendChild(s);
+    }
+  }
+
 });
 
 /* WHATSAPP */
 function zap(){
   window.open("https://wa.me/5511951319587");
 }
-
 </script>
-
-</body>
-  </html>
