@@ -1,74 +1,115 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Sukuna</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1a0000, #3b0000);
-      color: white;
-      text-align: center;
-    }
+<meta charset="UTF-8">
+<title>Sukuna</title>
 
-    header {
-      padding: 40px;
-    }
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:black;
+  color:#ff0000;
+}
 
-    h1 {
-      font-size: 50px;
-      color: #ff2b2b;
-      text-shadow: 0 0 15px black;
-    }
+header{
+  text-align:center;
+  padding:60px 20px;
+  animation: shake 1.5s infinite;
+}
 
-    p {
-      font-size: 18px;
-      max-width: 600px;
-      margin: 20px auto;
-      opacity: 0.9;
-    }
+@keyframes shake{
+  0%{transform:translate(0)}
+  25%{transform:translate(2px,-2px)}
+  50%{transform:translate(-2px,2px)}
+  75%{transform:translate(2px,2px)}
+  100%{transform:translate(0)}
+}
 
-    .card {
-      background: rgba(0,0,0,0.4);
-      padding: 20px;
-      margin: 30px auto;
-      width: 80%;
-      max-width: 500px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(255,0,0,0.3);
-    }
+h1{
+  font-size:70px;
+  text-shadow:0 0 25px red;
+}
 
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: red;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-    }
+.glitch{
+  font-size:18px;
+  text-shadow:2px 0 red, -2px 0 black;
+}
 
-    a:hover {
-      background: darkred;
-    }
-  </style>
+.container{
+  width:90%;
+  max-width:900px;
+  margin:auto;
+}
+
+section{
+  margin:60px 0;
+  line-height:1.8;
+}
+
+.card{
+  padding:20px;
+  border:1px solid red;
+  border-radius:10px;
+  box-shadow:0 0 20px rgba(255,0,0,0.3);
+}
+
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 20px;
+  background:red;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+  background:darkred;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Sukuna</h1>
-    <p>O Rei das Maldições</p>
-  </header>
+<header>
+<h1>SUKUNA</h1>
+<p class="glitch">O REI DAS MALDIÇÕES</p>
+</header>
 
-  <div class="card">
-    <p>
-      Sukuna é uma das maldições mais poderosas de *Jujutsu Kaisen*,
-      conhecido como o Rei das Maldições, temido por todos os feiticeiros.
-    </p>
+<div class="container">
 
-    <a href="index.html">Voltar</a>
-  </div>
+<section class="card">
+<h2>☠ Origem</h2>
+
+<p>
+Sukuna é uma entidade antiga e extremamente perigosa.
+Conhecido como o Rei das Maldições, ele destrói tudo ao seu redor.
+</p>
+
+<p>
+Sua presença causa medo e distorce a energia ao redor.
+</p>
+</section>
+
+<section class="card">
+<h2>⚠ Aviso</h2>
+
+<p class="glitch">
+VOCÊ ENTROU EM UM DOMÍNIO PROIBIDO...
+</p>
+
+<p>
+Poucos conseguem sobreviver à sua presença.
+</p>
+</section>
+
+<section>
+<a class="btn" href="index.html">Voltar</a>
+</section>
+
+</div>
 
 </body>
 </html>
