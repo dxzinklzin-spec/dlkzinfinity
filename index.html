@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DLKZ77CC EDITZ</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 
 /* RESET */
@@ -26,71 +28,74 @@ body {
 #loading {
   position: fixed;
   inset: 0;
-  background: #000;
+  background: radial-gradient(circle at center, #000 0%, #02040a 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   z-index: 9999;
-  gap: 10px;
-  transition: 0.6s;
+}
+
+.loading-box {
+  padding: 30px 40px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+  animation: pop 0.8s ease;
+}
+
+@keyframes pop {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 .title {
-  color: #00aaff;
+  font-family: 'Orbitron', sans-serif;
   font-size: 20px;
+  color: #00aaff;
   letter-spacing: 2px;
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
 }
 
 #percent {
   font-size: 22px;
   color: #00aaff;
-  opacity: 0;
-  animation: fadeIn 1.2s ease forwards;
-  animation-delay: 0.3s;
+  margin-top: 5px;
 }
 
 #bar {
   width: 220px;
   height: 6px;
-  background: #222;
+  background: #111;
   border-radius: 10px;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 #progress {
   width: 0%;
   height: 100%;
-  background: #00aaff;
+  background: linear-gradient(90deg, #00aaff, #0066ff);
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ===== GOJO BACKGROUND (CORRETO) ===== */
+/* ===== GOJO FUNDO ===== */
 .gojo-bg {
   position: fixed;
   inset: 0;
   z-index: 0;
-
   background: url("https://images5.alphacoders.com/131/1314707.jpeg") center/cover no-repeat;
-
-  opacity: 0.18;
-  filter: blur(1px) brightness(0.55);
+  filter: blur(1px) brightness(0.5);
+  opacity: 0.22;
   transform: scale(1.05);
 }
 
-/* CONTEÚDO FICA ACIMA DO GOJO */
+/* CONTEÚDO */
 header, section, footer {
   position: relative;
   z-index: 2;
 }
 
-/* ===== ESTRELAS ===== */
+/* ESTRELAS */
 .stars {
   position: fixed;
   inset: 0;
@@ -105,7 +110,6 @@ header, section, footer {
   border-radius: 50%;
   animation: float linear infinite;
   box-shadow: 0 0 6px #4aaaff;
-  opacity: 0.6;
 }
 
 @keyframes float {
@@ -125,7 +129,7 @@ header {
   text-shadow: 0 0 10px #00aaff, 0 0 20px #0066ff;
 }
 
-/* FADE IN */
+/* FADE */
 .fade {
   opacity: 0;
   transform: translateY(30px);
@@ -164,7 +168,7 @@ section {
 .row span { color: #ccc; }
 .row b { color: #00aaff; }
 
-/* INPUTS */
+/* FORM */
 select, textarea {
   width: 100%;
   padding: 10px;
@@ -175,10 +179,9 @@ select, textarea {
   color: white;
 }
 
-textarea {
-  height: 100px;
-}
+textarea { height: 100px; }
 
+/* BOTÃO AZUL */
 button {
   width: 100%;
   margin-top: 10px;
@@ -189,6 +192,12 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #0088ff;
+  transform: scale(1.02);
 }
 
 /* FOOTER */
@@ -205,12 +214,14 @@ footer {
 
 <!-- LOADING -->
 <div id="loading">
-  <h2 class="title">BEM VINDO AO SITE</h2>
-  <div id="percent">0%</div>
-  <div id="bar"><div id="progress"></div></div>
+  <div class="loading-box">
+    <div class="title">BEM VINDO AO SITE</div>
+    <div id="percent">0%</div>
+    <div id="bar"><div id="progress"></div></div>
+  </div>
 </div>
 
-<!-- GOJO FUNDO -->
+<!-- GOJO -->
 <div class="gojo-bg"></div>
 
 <!-- ESTRELAS -->
@@ -222,52 +233,33 @@ footer {
   <p>Motion | Anime | Futebol | Foto | Games</p>
 </header>
 
-<!-- PREÇOS -->
 <section class="fade">
   <h2>Preços</h2>
 
   <div class="table">
-    <div class="row"><span>Motion Design</span><b>R$ 30,00</b></div>
-    <div class="row"><span>Edit de Anime</span><b>R$ 15,00</b></div>
+    <div class="row"><span>Edição de Fotos</span><b>R$ 7,00</b></div>
     <div class="row"><span>Edit de Futebol</span><b>R$ 12,00</b></div>
-    <div class="row"><span>Fotos</span><b>R$ 7,00</b></div>
-    <div class="row"><span>Free Fire</span><b>R$ 27,00</b></div>
+    <div class="row"><span>Edit de Anime</span><b>R$ 15,00</b></div>
     <div class="row"><span>Roblox</span><b>R$ 19,00</b></div>
+    <div class="row"><span>Free Fire</span><b>R$ 27,00</b></div>
+    <div class="row"><span>Motion Design</span><b>R$ 30,00</b></div>
   </div>
 </section>
 
-<!-- SOBRE -->
-<section class="fade">
-  <h2>Sobre mim</h2>
-
-  <p>
-    Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos. Trabalho transformando imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.
-  </p>
-
-  <p>
-    Nas edits de anime, busco intensidade e estilo, destacando cada frame com efeitos que combinam com a energia das cenas. No futebol, meu foco é a velocidade, a adrenalina e o impacto de cada jogada, deixando tudo mais dinâmico e envolvente.
-  </p>
-
-  <p>
-    Também atuo na edição de fotos, criando visuais mais chamativos, com correção de cor, efeitos e uma identidade própria para cada imagem.
-  </p>
-</section>
-
-<!-- PEDIDO CLIENTE -->
 <section class="fade">
   <h2>O que você quer na edição?</h2>
 
-  <select id="tipo">
-    <option>Edit de anime</option>
-    <option>Edit de futebol</option>
-    <option>Motion design</option>
+  <select>
+    <option>Anime</option>
+    <option>Futebol</option>
+    <option>Motion</option>
     <option>Free Fire</option>
     <option>Roblox</option>
   </select>
 
-  <textarea id="msg" placeholder="Descreva sua ideia..."></textarea>
+  <textarea placeholder="Descreva sua ideia..."></textarea>
 
-  <button onclick="zap()">Chamar no WhatsApp</button>
+  <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
 </section>
 
 <footer>
@@ -293,10 +285,8 @@ let load = setInterval(() => {
     setTimeout(() => {
       document.getElementById("loading").style.display = "none";
 
-      document.querySelectorAll(".fade").forEach((el, i) => {
-        setTimeout(() => {
-          el.classList.add("show");
-        }, i * 200);
+      document.querySelectorAll(".fade").forEach((el,i)=>{
+        setTimeout(()=> el.classList.add("show"), i*200);
       });
 
     }, 600);
@@ -311,21 +301,20 @@ for (let i = 0; i < 120; i++) {
   let s = document.createElement("div");
   s.className = "star";
 
-  s.style.left = Math.random() * 100 + "%";
-  s.style.top = Math.random() * 100 + "%";
-  s.style.animationDuration = (Math.random() * 5 + 3) + "s";
-  s.style.opacity = Math.random();
+  s.style.left = Math.random()*100 + "%";
+  s.style.top = Math.random()*100 + "%";
+  s.style.animationDuration = (Math.random()*5+3)+"s";
 
   stars.appendChild(s);
 }
 
 /* WHATSAPP */
 function zap() {
-  let tipo = document.getElementById("tipo").value;
-  let msg = document.getElementById("msg").value;
+  let tipo = document.querySelector("select").value;
+  let msg = document.querySelector("textarea").value;
 
   let url = "https://wa.me/5511951319587?text=" +
-  encodeURIComponent("Quero: " + tipo + " - " + msg);
+  encodeURIComponent("Quero uma edição de: " + tipo + " | Detalhes: " + msg);
 
   window.open(url);
 }
