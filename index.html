@@ -14,10 +14,10 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, sans-serif;
+  font-family:Arial;
 }
 
-/* 💥 FUNDO PRETO */
+/* FUNDO PRETO */
 body{
   background:#000;
   color:white;
@@ -39,18 +39,10 @@ body{
   display:flex;
   flex-direction:column;
   align-items:center;
-  text-align:center;
-  padding:30px 40px;
+  padding:30px;
   border-radius:18px;
   background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(10px);
   border:1px solid rgba(255,255,255,0.1);
-}
-
-.title{
-  font-family:'Orbitron', sans-serif;
-  color:#00aaff;
-  font-size:20px;
 }
 
 #percent{
@@ -71,10 +63,10 @@ body{
 #progress{
   width:0%;
   height:100%;
-  background:linear-gradient(90deg,#00aaff,#0066ff);
+  background:#00aaff;
 }
 
-/* ✨ ESTRELAS */
+/* ESTRELAS */
 .stars{
   position:fixed;
   inset:0;
@@ -110,14 +102,14 @@ header{
 .glow{
   font-size:38px;
   color:#00aaff;
-  text-shadow:0 0 10px #00aaff,0 0 20px #0066ff;
+  text-shadow:0 0 10px #00aaff;
 }
 
 /* FADE */
 .fade{
   opacity:0;
-  transform:translateY(30px);
-  transition:1s ease;
+  transform:translateY(25px);
+  transition:1s;
 }
 
 .fade.show{
@@ -147,22 +139,30 @@ section{
   border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-.row:last-child{border:none;}
-
 .row span{color:#ccc;}
 .row b{color:#00aaff;}
 
 /* ABOUT */
 .about-block{
-  margin:18px 0;
-  padding:12px 15px;
+  margin:15px 0;
+  padding:12px;
   background:rgba(255,255,255,0.03);
   border-radius:10px;
 }
 
-.about-block p{
-  line-height:1.6;
-  color:#ddd;
+/* FORM */
+input, select, textarea{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:8px;
+  border:none;
+  outline:none;
+}
+
+textarea{
+  height:80px;
+  resize:none;
 }
 
 /* BOTÃO */
@@ -178,6 +178,13 @@ button{
   cursor:pointer;
 }
 
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  color:#777;
+}
+
 </style>
 </head>
 
@@ -186,7 +193,7 @@ button{
 <!-- LOADING -->
 <div id="loading">
   <div class="loading-box">
-    <div class="title">BEM VINDO AO SITE</div>
+    <div style="color:#00aaff;font-family:Orbitron;">CARREGANDO...</div>
     <div id="percent">0%</div>
     <div id="bar"><div id="progress"></div></div>
   </div>
@@ -198,7 +205,7 @@ button{
 <!-- HEADER -->
 <header class="fade">
   <h1 class="glow">DLKZ77CC EDITZ</h1>
-  <p>Motion | Anime | Futebol | Foto | Games</p>
+  <p>Motion | Anime | Futebol | Foto</p>
 </header>
 
 <!-- PREÇOS -->
@@ -206,77 +213,63 @@ button{
   <h2>Preços</h2>
 
   <div class="table">
-    <div class="row"><span>Edição de Fotos</span><b>R$ 7,00</b></div>
-    <div class="row"><span>Edit de Futebol</span><b>R$ 12,00</b></div>
-    <div class="row"><span>Edit de Anime</span><b>R$ 15,00</b></div>
-    <div class="row"><span>Roblox</span><b>R$ 19,00</b></div>
-    <div class="row"><span>Free Fire</span><b>R$ 27,00</b></div>
-    <div class="row"><span>Motion Design</span><b>R$ 30,00</b></div>
+    <div class="row"><span>Edição de Fotos</span><b>R$ 7</b></div>
+    <div class="row"><span>Futebol</span><b>R$ 12</b></div>
+    <div class="row"><span>Anime</span><b>R$ 15</b></div>
+    <div class="row"><span>Motion</span><b>R$ 30</b></div>
   </div>
 </section>
 
-<!-- SOBRE MIM (SEPARADO COMO VOCÊ PEDIU) -->
+<!-- SOBRE (SEPARADO) -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
-  <div class="about-block">
-    <p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.</p>
-  </div>
-
-  <div class="about-block">
-    <p>Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.</p>
-  </div>
-
-  <div class="about-block">
-    <p>Nas edits de anime, busco intensidade e identidade visual forte, destacando cada frame com efeitos que combinam com a energia das cenas.</p>
-  </div>
-
-  <div class="about-block">
-    <p>No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada.</p>
-  </div>
-
-  <div class="about-block">
-    <p>Também atuo na edição de fotos, criando visuais profissionais e chamativos.</p>
-  </div>
-
-  <div class="about-block">
-    <p>Sempre evoluindo e buscando elevar o nível de cada projeto.</p>
-  </div>
+  <div class="about-block">Sou editor de motion e criador de conteúdo visual.</div>
+  <div class="about-block">Trabalho com anime, futebol e fotos.</div>
+  <div class="about-block">Foco em estética, ritmo e impacto visual.</div>
+  <div class="about-block">Sempre evoluindo e melhorando minhas edits.</div>
 </section>
 
-<!-- CONTATO -->
+<!-- PEDIDO DO CLIENTE -->
 <section class="fade">
-  <h2>Contato</h2>
-  <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
+  <h2>Pedido da edição</h2>
+
+  <select id="tipo">
+    <option>Anime</option>
+    <option>Futebol</option>
+    <option>Motion</option>
+    <option>Foto</option>
+  </select>
+
+  <textarea id="msg" placeholder="Descreva sua edição..."></textarea>
+
+  <button onclick="zap()">ENVIAR NO WHATSAPP</button>
 </section>
 
 <footer>
-  <p>© DLKZ77CC EDITZ</p>
+  © DLKZ77CC EDITZ
 </footer>
 
 <script>
 
-/* LOADING SEGURO */
+/* LOADING FIXADO */
 window.addEventListener("load", () => {
 
-  const loading = document.getElementById("loading");
+  let p = 0;
   const progress = document.getElementById("progress");
   const percent = document.getElementById("percent");
+  const loading = document.getElementById("loading");
 
-  let p = 0;
-
-  const interval = setInterval(() => {
+  let load = setInterval(() => {
 
     p += 2;
-
-    if (p > 100) p = 100;
 
     progress.style.width = p + "%";
     percent.innerText = p + "%";
 
-    if (p === 100) {
+    if (p >= 100) {
 
-      clearInterval(interval);
+      clearInterval(load);
 
       setTimeout(() => {
 
@@ -301,8 +294,8 @@ window.addEventListener("load", () => {
 /* ESTRELAS */
 const stars = document.getElementById("stars");
 
-for(let i=0;i<120;i++){
-  const s=document.createElement("div");
+for(let i=0;i<100;i++){
+  let s=document.createElement("div");
   s.className="star";
 
   s.style.left=Math.random()*100+"%";
@@ -314,7 +307,14 @@ for(let i=0;i<120;i++){
 
 /* WHATSAPP */
 function zap(){
-  window.open("https://wa.me/5511951319587");
+
+  let tipo=document.getElementById("tipo").value;
+  let msg=document.getElementById("msg").value;
+
+  let url="https://wa.me/5511951319587?text="+
+  encodeURIComponent("Quero uma edição de: "+tipo+" | Detalhes: "+msg);
+
+  window.open(url);
 }
 
 </script>
