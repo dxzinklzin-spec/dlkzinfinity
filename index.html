@@ -27,20 +27,18 @@ body {
 #loading {
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at center, #000 0%, #02040a 100%);
+  background: radial-gradient(circle, #000, #02040a);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  transition: 0.8s ease;
 }
 
 .loading-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  padding: 30px 40px;
-  border-radius: 18px;
+  padding: 30px;
+  border-radius: 15px;
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,0.1);
@@ -155,7 +153,7 @@ header {
 .row span { color: #ccc; }
 .row b { color: #00aaff; }
 
-/* BOTÃO WHATSAPP */
+/* BOTÃO */
 button {
   width: 100%;
   margin-top: 10px;
@@ -178,7 +176,7 @@ button:hover {
 /* TEXTO SEPARADO */
 .about-block {
   margin: 16px 0;
-  padding: 14px 16px;
+  padding: 14px;
   background: rgba(255,255,255,0.03);
   border-radius: 10px;
 }
@@ -275,18 +273,26 @@ let p = 0;
 
 let load = setInterval(() => {
   p++;
+
   document.getElementById("progress").style.width = p + "%";
   document.getElementById("percent").innerText = p + "%";
 
   if (p >= 100) {
     clearInterval(load);
 
-    document.getElementById("loading").style.display = "none";
+    const loading = document.getElementById("loading");
+    loading.style.opacity = "0";
 
-    document.querySelectorAll(".fade").forEach((el,i)=>{
-      setTimeout(()=> el.classList.add("show"), i*200);
-    });
+    setTimeout(() => {
+      loading.style.display = "none";
+
+      document.querySelectorAll(".fade").forEach((el, i) => {
+        setTimeout(() => el.classList.add("show"), i * 200);
+      });
+
+    }, 800);
   }
+
 }, 20);
 
 /* ESTRELAS */
@@ -295,9 +301,11 @@ const stars = document.getElementById("stars");
 for (let i = 0; i < 120; i++) {
   let s = document.createElement("div");
   s.className = "star";
-  s.style.left = Math.random()*100 + "%";
-  s.style.top = Math.random()*100 + "%";
-  s.style.animationDuration = (Math.random()*5+3)+"s";
+
+  s.style.left = Math.random() * 100 + "%";
+  s.style.top = Math.random() * 100 + "%";
+  s.style.animationDuration = (Math.random() * 5 + 3) + "s";
+
   stars.appendChild(s);
 }
 
@@ -307,7 +315,7 @@ function zap() {
   let msg = document.getElementById("msg").value;
 
   let url = "https://wa.me/5511951319587?text=" +
-  encodeURIComponent("Quero uma edição de: " + tipo + " | Detalhes: " + msg);
+    encodeURIComponent("Quero uma edição de: " + tipo + " | Detalhes: " + msg);
 
   window.open(url);
 }
