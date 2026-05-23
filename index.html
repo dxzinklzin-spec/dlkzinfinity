@@ -14,7 +14,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial;
+  font-family:Arial, sans-serif;
 }
 
 /* FUNDO PRETO */
@@ -43,6 +43,24 @@ body{
   border-radius:18px;
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.1);
+  animation:fadeInScale 0.8s ease;
+}
+
+@keyframes fadeInScale{
+  0%{opacity:0; transform:scale(0.8);}
+  100%{opacity:1; transform:scale(1);}
+}
+
+.title{
+  font-family:'Orbitron', sans-serif;
+  color:#00aaff;
+  font-size:20px;
+  animation:glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 5px #00aaff;}
+  to{text-shadow:0 0 18px #00aaff;}
 }
 
 #percent{
@@ -139,6 +157,8 @@ section{
   border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
+.row:last-child{border:none;}
+
 .row span{color:#ccc;}
 .row b{color:#00aaff;}
 
@@ -148,21 +168,6 @@ section{
   padding:12px;
   background:rgba(255,255,255,0.03);
   border-radius:10px;
-}
-
-/* FORM */
-input, select, textarea{
-  width:100%;
-  padding:10px;
-  margin-top:10px;
-  border-radius:8px;
-  border:none;
-  outline:none;
-}
-
-textarea{
-  height:80px;
-  resize:none;
 }
 
 /* BOTÃO */
@@ -193,7 +198,7 @@ footer{
 <!-- LOADING -->
 <div id="loading">
   <div class="loading-box">
-    <div style="color:#00aaff;font-family:Orbitron;">CARREGANDO...</div>
+    <div class="title">SEJA BEM-VINDO</div>
     <div id="percent">0%</div>
     <div id="bar"><div id="progress"></div></div>
   </div>
@@ -220,30 +225,39 @@ footer{
   </div>
 </section>
 
-<!-- SOBRE (SEPARADO) -->
+<!-- SOBRE MIM (ORIGINAL RESTAURADO) -->
 <section class="fade">
   <h2>Sobre mim</h2>
 
-  <div class="about-block">Sou editor de motion e criador de conteúdo visual.</div>
-  <div class="about-block">Trabalho com anime, futebol e fotos.</div>
-  <div class="about-block">Foco em estética, ritmo e impacto visual.</div>
-  <div class="about-block">Sempre evoluindo e melhorando minhas edits.</div>
+  <div class="about-block">
+    <p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Nas edits de anime, busco intensidade e identidade visual forte, destacando cada frame com efeitos que combinam com a energia das cenas.</p>
+  </div>
+
+  <div class="about-block">
+    <p>No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada, deixando tudo mais dinâmico e envolvente.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Também atuo na edição de fotos, aprimorando cores, contraste e estilo para criar visuais mais chamativos e profissionais.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Estou sempre evoluindo, testando novas ideias e buscando elevar o nível de cada projeto.</p>
+  </div>
 </section>
 
-<!-- PEDIDO DO CLIENTE -->
+<!-- CONTATO -->
 <section class="fade">
-  <h2>Pedido da edição</h2>
-
-  <select id="tipo">
-    <option>Anime</option>
-    <option>Futebol</option>
-    <option>Motion</option>
-    <option>Foto</option>
-  </select>
-
-  <textarea id="msg" placeholder="Descreva sua edição..."></textarea>
-
-  <button onclick="zap()">ENVIAR NO WHATSAPP</button>
+  <h2>Contato</h2>
+  <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
 </section>
 
 <footer>
@@ -252,24 +266,27 @@ footer{
 
 <script>
 
-/* LOADING FIXADO */
+/* LOADING COM ANIMAÇÃO */
 window.addEventListener("load", () => {
 
-  let p = 0;
+  const loading = document.getElementById("loading");
   const progress = document.getElementById("progress");
   const percent = document.getElementById("percent");
-  const loading = document.getElementById("loading");
 
-  let load = setInterval(() => {
+  let p = 0;
+
+  const interval = setInterval(() => {
 
     p += 2;
+
+    if (p > 100) p = 100;
 
     progress.style.width = p + "%";
     percent.innerText = p + "%";
 
-    if (p >= 100) {
+    if (p === 100) {
 
-      clearInterval(load);
+      clearInterval(interval);
 
       setTimeout(() => {
 
@@ -294,8 +311,8 @@ window.addEventListener("load", () => {
 /* ESTRELAS */
 const stars = document.getElementById("stars");
 
-for(let i=0;i<100;i++){
-  let s=document.createElement("div");
+for(let i=0;i<120;i++){
+  const s=document.createElement("div");
   s.className="star";
 
   s.style.left=Math.random()*100+"%";
@@ -307,14 +324,7 @@ for(let i=0;i<100;i++){
 
 /* WHATSAPP */
 function zap(){
-
-  let tipo=document.getElementById("tipo").value;
-  let msg=document.getElementById("msg").value;
-
-  let url="https://wa.me/5511951319587?text="+
-  encodeURIComponent("Quero uma edição de: "+tipo+" | Detalhes: "+msg);
-
-  window.open(url);
+  window.open("https://wa.me/5511951319587");
 }
 
 </script>
