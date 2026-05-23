@@ -1,286 +1,117 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DLKZ_INFINITY</title>
+<title>Gojo Satoru</title>
 
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-scroll-behavior:smooth;
-}
-
 body{
-background:black;
-color:white;
-overflow-x:hidden;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#001a33,#000);
+  color:white;
 }
 
-/* FUNDO */
-
-.gojo-page{
-min-height:100vh;
-background:linear-gradient(to bottom,#000,#001133,#000);
-position:relative;
-overflow:hidden;
-padding:40px 20px;
+header{
+  text-align:center;
+  padding:50px 20px;
 }
 
-/* ESTRELAS */
-
-.stars{
-position:absolute;
-width:100%;
-height:100%;
-top:0;
-left:0;
-overflow:hidden;
+h1{
+  font-size:60px;
+  color:#00ccff;
+  text-shadow:0 0 20px black;
 }
 
-.star{
-position:absolute;
-width:4px;
-height:4px;
-background:#4da6ff;
-border-radius:50%;
-box-shadow:0 0 15px #4da6ff;
-animation:float 3s infinite alternate;
+.container{
+  width:90%;
+  max-width:900px;
+  margin:auto;
 }
 
-@keyframes float{
-from{
-transform:translateY(0px);
-opacity:.3;
+section{
+  margin:60px 0;
+  line-height:1.8;
 }
 
-to{
-transform:translateY(-20px);
-opacity:1;
-}
-}
-
-/* CONTAINER */
-
-.gojo-container{
-position:relative;
-z-index:2;
-max-width:1200px;
-margin:auto;
-text-align:center;
+iframe{
+  width:100%;
+  height:420px;
+  border:none;
+  border-radius:15px;
 }
 
-/* INTRO */
-
-.intro-text{
-font-size:65px;
-font-weight:bold;
-color:#4da6ff;
-text-shadow:0 0 30px #4da6ff;
-margin-top:100px;
-animation:intro 2s ease forwards;
-opacity:0;
+.btn{
+  display:inline-block;
+  margin:10px;
+  padding:12px 20px;
+  background:#00ccff;
+  color:black;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
 }
 
-@keyframes intro{
-0%{
-opacity:0;
-transform:translateY(-100px);
-}
-
-100%{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* GOJO */
-
-.gojo-img{
-width:350px;
-margin-top:30px;
-filter:drop-shadow(0 0 40px #4da6ff);
-animation:fadeIn 2s ease forwards;
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* TEXTOS */
-
-.fade-text{
-opacity:0;
-transform:translateY(50px);
-animation:fadeUp 1.5s forwards;
-}
-
-.fade1{
-animation-delay:1s;
-}
-
-.fade2{
-animation-delay:2s;
-}
-
-.fade3{
-animation-delay:3s;
-}
-
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* BOX */
-
-.info-box{
-max-width:900px;
-margin:auto;
-margin-top:40px;
-background:rgba(255,255,255,.05);
-border:1px solid #4da6ff;
-border-radius:30px;
-padding:30px;
-backdrop-filter:blur(10px);
-box-shadow:0 0 40px rgba(77,166,255,.4);
+.btn:hover{
+  transform:scale(1.05);
+  background:#0099cc;
 }
 
 .text{
-font-size:24px;
-line-height:1.8;
-margin-top:25px;
-color:#d9ecff;
+  font-size:18px;
+  opacity:0.9;
 }
-
-/* VIDEO */
-
-.video-demo{
-margin-top:40px;
-height:350px;
-border-radius:25px;
-overflow:hidden;
-background:black;
-border:2px solid #4da6ff;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-color:#4da6ff;
-box-shadow:0 0 30px rgba(77,166,255,.5);
-}
-
-/* BOTÃO */
-
-.enter-btn{
-display:inline-block;
-margin-top:50px;
-padding:20px 50px;
-border-radius:50px;
-background:#4da6ff;
-color:white;
-font-size:24px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 0 30px #4da6ff;
-transition:.4s;
-}
-
-.enter-btn:hover{
-transform:scale(1.07);
-box-shadow:0 0 50px #4da6ff;
-}
-
 </style>
 </head>
 
 <body>
 
-<section class="gojo-page">
+<header>
+<h1>Gojo Satoru</h1>
+<p>O feiticeiro mais forte do Jujutsu</p>
+</header>
 
-<!-- ESTRELAS -->
+<div class="container">
 
-<div class="stars">
+<section>
+<h2>🔥 Vídeo</h2>
 
-<div class="star" style="top:10%;left:20%;"></div>
-<div class="star" style="top:30%;left:80%;"></div>
-<div class="star" style="top:50%;left:10%;"></div>
-<div class="star" style="top:70%;left:60%;"></div>
-<div class="star" style="top:20%;left:50%;"></div>
-<div class="star" style="top:80%;left:30%;"></div>
-
-</div>
-
-<!-- CONTAINER -->
-
-<div class="gojo-container">
-
-<h1 class="intro-text">
-Expansão de Domínio
-</h1>
-
-<img
-class="gojo-img"
-src="https://i.imgur.com/5XdjP8V.png"
-alt="Gojo"
->
-
-<div class="info-box">
-
-<h2
-class="fade-text fade1"
-style="font-size:50px;color:#4da6ff;"
->
-DLKZ77CC
-</h2>
-
-<p class="text fade-text fade1">
-“Yo… então você finalmente chegou.”
-</p>
-
-<p class="text fade-text fade2">
-“Motion, anime, futebol… sinceramente? Eu faço isso parecer fácil.”
-</p>
-
-<p class="text fade-text fade3">
-“Se for pra editar… então vamos ultrapassar o limite.”
-</p>
-
-<div class="video-demo fade-text fade3">
-Gojo usando Vazio Roxo
-</div>
-
-<p class="text fade-text fade3">
-Faço edits para marcas, empresas, apps e muito mais.
-Ficou interessado? Então aperta o botão abaixo e entra no próximo nível.
-</p>
-
-<!-- BOTÃO CERTO -->
-
-<a href="sukuna.html" class="enter-btn">
-Entrar no território
-</a>
-
-</div>
-
-</div>
+<!-- TikTok embed -->
+<iframe src="https://www.tiktok.com/embed/v2/ZSx5Xae46"></iframe>
 
 </section>
+
+<section>
+<h2>📖 História</h2>
+
+<p class="text">
+Gojo Satoru é o feiticeiro mais forte da era moderna.
+Ele possui a técnica do “Infinito”, que impede qualquer coisa de tocá-lo.
+</p>
+
+<p class="text">
+Ele protege seus alunos e luta contra maldições extremamente perigosas.
+</p>
+
+<p class="text">
+Mesmo sendo poderoso, ele é brincalhão e confiante.
+</p>
+
+</section>
+
+<section>
+<h2>🌐 Redes Sociais</h2>
+
+<a class="btn" href="https://www.tiktok.com" target="_blank">Siga meu perfil</a>
+<a class="btn" href="https://www.instagram.com" target="_blank">Siga meu perfil do Insta</a>
+
+</section>
+
+<section>
+<a class="btn" href="index.html">Voltar</a>
+</section>
+
+</div>
 
 </body>
 </html>
