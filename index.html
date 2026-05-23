@@ -144,10 +144,17 @@ section{
   border-bottom:1px solid rgba(255,255,255,0.1);
 }
 
-.row:last-child{border:none;}
+.row:last-child{
+  border:none;
+}
 
-.row span{color:#ccc;}
-.row b{color:#00aaff;}
+.row span{
+  color:#ccc;
+}
+
+.row b{
+  color:#00aaff;
+}
 
 /* ABOUT */
 .about-block{
@@ -158,7 +165,8 @@ section{
 }
 
 /* FORM */
-textarea, select{
+textarea,
+select{
   width:100%;
   margin-top:10px;
   padding:10px;
@@ -197,7 +205,9 @@ footer{
   <div class="loading-box">
     <div class="title">SEJA BEM-VINDO</div>
     <div id="percent">0%</div>
-    <div id="bar"><div id="progress"></div></div>
+    <div id="bar">
+      <div id="progress"></div>
+    </div>
   </div>
 </div>
 
@@ -210,15 +220,30 @@ footer{
   <p>Motion | Anime | Futebol | Foto</p>
 </header>
 
-<!-- PREÇOS (SÓ ALTERADO COMO VOCÊ PEDIU) -->
+<!-- PREÇOS -->
 <section class="fade">
   <h2>Preços</h2>
 
   <div class="table">
-    <div class="row"><span>Edição de Fotos</span><b>R$ 7,00 Reais</b></div>
-    <div class="row"><span>Futebol</span><b>R$ 12,00 Reais</b></div>
-    <div class="row"><span>Anime</span><b>R$ 15,00 Reais</b></div>
-    <div class="row"><span>Motion</span><b>R$ 30,00 Reais</b></div>
+    <div class="row">
+      <span>Edição de Fotos</span>
+      <b>R$ 7,00 Reais</b>
+    </div>
+
+    <div class="row">
+      <span>Futebol</span>
+      <b>R$ 12,00 Reais</b>
+    </div>
+
+    <div class="row">
+      <span>Anime</span>
+      <b>R$ 15,00 Reais</b>
+    </div>
+
+    <div class="row">
+      <span>Motion</span>
+      <b>R$ 30,00 Reais</b>
+    </div>
   </div>
 </section>
 
@@ -235,19 +260,19 @@ footer{
   </div>
 
   <div class="about-block">
-    <p>Nas edits de anime, busco intensidade e identidade visual forte.</p>
+    <p>Nas edits de anime, busco intensidade e identidade visual forte, destacando cada frame com efeitos que combinam com a energia das cenas.</p>
   </div>
 
   <div class="about-block">
-    <p>No futebol, foco na velocidade e impacto das jogadas.</p>
+    <p>No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada, deixando tudo mais dinâmico e envolvente.</p>
   </div>
 
   <div class="about-block">
-    <p>Também atuo na edição de fotos com estilo profissional.</p>
+    <p>Também atuo na edição de fotos, aprimorando cores, contraste e estilo para criar visuais mais chamativos e profissionais.</p>
   </div>
 
   <div class="about-block">
-    <p>Sempre evoluindo e criando novos estilos.</p>
+    <p>Estou sempre evoluindo, testando novas ideias e buscando elevar o nível de cada projeto.</p>
   </div>
 </section>
 
@@ -274,8 +299,8 @@ footer{
 
 <script>
 
-/* LOADING (SÓ CORRIGIDO, NÃO MUDADO) */
-document.addEventListener("DOMContentLoaded", () => {
+/* LOADING */
+window.addEventListener("load", () => {
 
   const loading = document.getElementById("loading");
   const progress = document.getElementById("progress");
@@ -301,10 +326,13 @@ document.addEventListener("DOMContentLoaded", () => {
         loading.style.opacity = "0";
 
         setTimeout(() => {
+
           loading.style.display = "none";
 
           document.querySelectorAll(".fade").forEach((el,i)=>{
-            setTimeout(()=>el.classList.add("show"), i*150);
+            setTimeout(()=>{
+              el.classList.add("show");
+            }, i * 150);
           });
 
         },300);
@@ -319,24 +347,38 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ESTRELAS */
 const stars = document.getElementById("stars");
 
-for(let i=0;i<120;i++){
-  const s=document.createElement("div");
-  s.className="star";
+for(let i = 0; i < 120; i++){
 
-  s.style.left=Math.random()*100+"%";
-  s.style.top=Math.random()*100+"%";
-  s.style.animationDuration=(Math.random()*5+3)+"s";
+  const s = document.createElement("div");
+
+  s.className = "star";
+
+  s.style.left = Math.random() * 100 + "%";
+  s.style.top = Math.random() * 100 + "%";
+
+  s.style.animationDuration =
+  (Math.random() * 5 + 3) + "s";
 
   stars.appendChild(s);
-});
+}
 
 /* WHATSAPP */
 function zap(){
-  const tipo=document.getElementById("tipo").value;
-  const msg=document.getElementById("msg").value;
 
-  const url="https://wa.me/5511951319587?text="+
-  encodeURIComponent("Quero uma edição de: "+tipo+" | Detalhes: "+msg);
+  const tipo =
+  document.getElementById("tipo").value;
+
+  const msg =
+  document.getElementById("msg").value;
+
+  const url =
+  "https://wa.me/5511999999999?text=" +
+  encodeURIComponent(
+    "Quero uma edição de: " +
+    tipo +
+    " | Detalhes: " +
+    msg
+  );
 
   window.open(url);
 }
