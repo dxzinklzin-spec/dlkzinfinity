@@ -1,286 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Sukuna</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1a0000, #3b0000);
+      color: white;
+      text-align: center;
+    }
 
-<title>DLKZ_INFINITY</title>
+    header {
+      padding: 40px;
+    }
 
-<style>
+    h1 {
+      font-size: 50px;
+      color: #ff2b2b;
+      text-shadow: 0 0 15px black;
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-scroll-behavior:smooth;
-}
+    p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 20px auto;
+      opacity: 0.9;
+    }
 
-body{
-background:black;
-color:white;
-overflow-x:hidden;
-}
+    .card {
+      background: rgba(0,0,0,0.4);
+      padding: 20px;
+      margin: 30px auto;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255,0,0,0.3);
+    }
 
-/* FUNDO */
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: red;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
 
-.gojo-page{
-min-height:100vh;
-background:linear-gradient(to bottom,#000,#001133,#000);
-position:relative;
-overflow:hidden;
-padding:40px 20px;
-}
-
-/* ESTRELAS */
-
-.stars{
-position:absolute;
-width:100%;
-height:100%;
-top:0;
-left:0;
-overflow:hidden;
-}
-
-.star{
-position:absolute;
-width:4px;
-height:4px;
-background:#4da6ff;
-border-radius:50%;
-box-shadow:0 0 15px #4da6ff;
-animation:float 3s infinite alternate;
-}
-
-@keyframes float{
-from{
-transform:translateY(0px);
-opacity:.3;
-}
-
-to{
-transform:translateY(-20px);
-opacity:1;
-}
-}
-
-/* CONTAINER */
-
-.gojo-container{
-position:relative;
-z-index:2;
-max-width:1200px;
-margin:auto;
-text-align:center;
-}
-
-/* INTRO */
-
-.intro-text{
-font-size:65px;
-font-weight:bold;
-color:#4da6ff;
-text-shadow:0 0 30px #4da6ff;
-margin-top:100px;
-animation:intro 2s ease forwards;
-opacity:0;
-}
-
-@keyframes intro{
-0%{
-opacity:0;
-transform:translateY(-100px);
-}
-
-100%{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* GOJO */
-
-.gojo-img{
-width:350px;
-margin-top:30px;
-filter:drop-shadow(0 0 40px #4da6ff);
-animation:fadeIn 2s ease forwards;
-}
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* TEXTOS */
-
-.fade-text{
-opacity:0;
-transform:translateY(50px);
-animation:fadeUp 1.5s forwards;
-}
-
-.fade1{
-animation-delay:1s;
-}
-
-.fade2{
-animation-delay:2s;
-}
-
-.fade3{
-animation-delay:3s;
-}
-
-@keyframes fadeUp{
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* BOX */
-
-.info-box{
-max-width:900px;
-margin:auto;
-margin-top:40px;
-background:rgba(255,255,255,.05);
-border:1px solid #4da6ff;
-border-radius:30px;
-padding:30px;
-backdrop-filter:blur(10px);
-box-shadow:0 0 40px rgba(77,166,255,.4);
-}
-
-.text{
-font-size:24px;
-line-height:1.8;
-margin-top:25px;
-color:#d9ecff;
-}
-
-/* VIDEO */
-
-.video-demo{
-margin-top:40px;
-height:350px;
-border-radius:25px;
-overflow:hidden;
-background:black;
-border:2px solid #4da6ff;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-color:#4da6ff;
-box-shadow:0 0 30px rgba(77,166,255,.5);
-}
-
-/* BOTÃO */
-
-.enter-btn{
-display:inline-block;
-margin-top:50px;
-padding:20px 50px;
-border-radius:50px;
-background:#4da6ff;
-color:white;
-font-size:24px;
-font-weight:bold;
-text-decoration:none;
-box-shadow:0 0 30px #4da6ff;
-transition:.4s;
-}
-
-.enter-btn:hover{
-transform:scale(1.07);
-box-shadow:0 0 50px #4da6ff;
-}
-
-</style>
+    a:hover {
+      background: darkred;
+    }
+  </style>
 </head>
-
 <body>
 
-<section class="gojo-page">
+  <header>
+    <h1>Sukuna</h1>
+    <p>O Rei das Maldições</p>
+  </header>
 
-<!-- ESTRELAS -->
+  <div class="card">
+    <p>
+      Sukuna é uma das maldições mais poderosas de *Jujutsu Kaisen*,
+      conhecido como o Rei das Maldições, temido por todos os feiticeiros.
+    </p>
 
-<div class="stars">
-
-<div class="star" style="top:10%;left:20%;"></div>
-<div class="star" style="top:30%;left:80%;"></div>
-<div class="star" style="top:50%;left:10%;"></div>
-<div class="star" style="top:70%;left:60%;"></div>
-<div class="star" style="top:20%;left:50%;"></div>
-<div class="star" style="top:80%;left:30%;"></div>
-
-</div>
-
-<!-- CONTAINER -->
-
-<div class="gojo-container">
-
-<h1 class="intro-text">
-Expansão de Domínio
-</h1>
-
-<img
-class="gojo-img"
-src="https://i.imgur.com/5XdjP8V.png"
-alt="Gojo"
->
-
-<div class="info-box">
-
-<h2
-class="fade-text fade1"
-style="font-size:50px;color:#4da6ff;"
->
-DLKZ77CC
-</h2>
-
-<p class="text fade-text fade1">
-“Yo… então você finalmente chegou.”
-</p>
-
-<p class="text fade-text fade2">
-“Motion, anime, futebol… sinceramente? Eu faço isso parecer fácil.”
-</p>
-
-<p class="text fade-text fade3">
-“Se for pra editar… então vamos ultrapassar o limite.”
-</p>
-
-<div class="video-demo fade-text fade3">
-Gojo usando Vazio Roxo
-</div>
-
-<p class="text fade-text fade3">
-Faço edits para marcas, empresas, apps e muito mais.
-Ficou interessado? Então aperta o botão abaixo e entra no próximo nível.
-</p>
-
-<!-- BOTÃO CERTO -->
-
-<a href="sukuna.html" class="enter-btn">
-Entrar no território
-</a>
-
-</div>
-
-</div>
-
-</section>
+    <a href="index.html">Voltar</a>
+  </div>
 
 </body>
 </html>
