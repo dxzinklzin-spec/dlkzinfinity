@@ -2,43 +2,64 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Gojo Satoru</title>
+<title>Editor Gojo</title>
 
 <style>
 body{
   margin:0;
-  font-family:Arial, sans-serif;
-  background:linear-gradient(135deg,#001a33,#000);
+  font-family:Arial;
+  background:linear-gradient(180deg,#001a33,#000);
   color:white;
+  overflow-x:hidden;
 }
 
-header{
-  text-align:center;
-  padding:50px 20px;
+/* entrada */
+.intro{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  animation:fadeIn 2s ease;
 }
 
-h1{
-  font-size:60px;
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+.intro h1{
+  font-size:35px;
   color:#00ccff;
-  text-shadow:0 0 20px black;
 }
 
+/* scroll */
 .container{
-  width:90%;
-  max-width:900px;
+  width:85%;
   margin:auto;
+  padding-bottom:100px;
 }
 
 section{
-  margin:60px 0;
-  line-height:1.8;
+  margin:80px 0;
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp 1s forwards;
 }
 
-iframe{
-  width:100%;
-  height:420px;
-  border:none;
-  border-radius:15px;
+section:nth-child(2){animation-delay:0.3s}
+section:nth-child(3){animation-delay:0.6s}
+section:nth-child(4){animation-delay:0.9s}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+h2{
+  color:#00ccff;
 }
 
 .btn{
@@ -52,63 +73,63 @@ iframe{
   font-weight:bold;
 }
 
-.btn:hover{
-  transform:scale(1.05);
-  background:#0099cc;
-}
-
-.text{
-  font-size:18px;
-  opacity:0.9;
+.stars button{
+  font-size:25px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  color:gold;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-<h1>Gojo Satoru</h1>
-<p>O feiticeiro mais forte do Jujutsu</p>
-</header>
+<div class="intro">
+  <h1>EXPANSÃO DE DOMÍNIO...</h1>
+  <p>Gojo entrou no campo de apresentação</p>
+</div>
 
 <div class="container">
 
 <section>
-<h2>🔥 Vídeo</h2>
-
-<!-- TikTok embed -->
-<iframe src="https://www.tiktok.com/embed/v2/ZSx5Xae46"></iframe>
-
+<h2>😎 Quem sou eu</h2>
+<p>Eu sou um editor estilo anime, rápido, criativo e com visão diferenciada.</p>
 </section>
 
 <section>
-<h2>📖 História</h2>
-
-<p class="text">
-Gojo Satoru é o feiticeiro mais forte da era moderna.
-Ele possui a técnica do “Infinito”, que impede qualquer coisa de tocá-lo.
-</p>
-
-<p class="text">
-Ele protege seus alunos e luta contra maldições extremamente perigosas.
-</p>
-
-<p class="text">
-Mesmo sendo poderoso, ele é brincalhão e confiante.
-</p>
-
+<h2>🔥 Demonstração</h2>
+<p>Aqui você coloca seus vídeos depois (CapCut, edits etc).</p>
 </section>
 
 <section>
-<h2>🌐 Redes Sociais</h2>
-
-<a class="btn" href="https://www.tiktok.com" target="_blank">Siga meu perfil</a>
-<a class="btn" href="https://www.instagram.com" target="_blank">Siga meu perfil do Insta</a>
-
+<h2>💰 Serviços</h2>
+<p>• Edit simples</p>
+<p>• Edit avançado anime</p>
+<p>• Transições + efeitos</p>
 </section>
 
 <section>
-<a class="btn" href="index.html">Voltar</a>
+<h2>📩 Orçamento</h2>
+<a class="btn" href="sukuna.html">Ver preços / Sukuna</a>
+</section>
+
+<section>
+<h2>📞 Contato rápido</h2>
+<a class="btn" href="https://wa.me/5511951319587?text=Quero%20uma%20edit" target="_blank">
+💬 Conversar no WhatsApp
+</a>
+</section>
+
+<section>
+<h2>⭐ Avaliação</h2>
+<div class="stars">
+  <button>★</button>
+  <button>★</button>
+  <button>★</button>
+  <button>★</button>
+  <button>★</button>
+</div>
 </section>
 
 </div>
