@@ -5,130 +5,181 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DLKZ77CC EDITZ</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
 
 /* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-body{
-  background:#000;
-  color:#fff;
-  overflow-x:hidden;
+body {
+  background: #05070f;
+  color: white;
+  overflow-x: hidden;
 }
 
 /* LOADING */
-#loading{
-  position:fixed;
-  inset:0;
-  background:#000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-  z-index:9999;
-  transition:0.5s ease;
+#loading {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #000, #02040a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: 0.8s ease;
 }
 
-#percent{
-  font-size:30px;
-  color:#00aaff;
-  margin-bottom:10px;
+.loading-box {
+  text-align: center;
+  padding: 30px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-#bar{
-  width:260px;
-  height:6px;
-  background:#111;
-  border-radius:20px;
-  overflow:hidden;
+.title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: #00aaff;
 }
 
-#progress{
-  width:0%;
-  height:100%;
-  background:#00aaff;
+#percent {
+  font-size: 22px;
+  color: #00aaff;
+  margin-top: 5px;
+}
+
+#bar {
+  width: 220px;
+  height: 6px;
+  background: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#progress {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #00aaff, #0066ff);
 }
 
 /* ESTRELAS */
-.star{
-  position:absolute;
-  width:2px;
-  height:2px;
-  background:#4aaaff;
-  border-radius:50%;
-  animation:float linear infinite;
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
 }
 
-@keyframes float{
-  from{transform:translateY(0);}
-  to{transform:translateY(-120vh);}
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #4aaaff;
+  border-radius: 50%;
+  animation: float linear infinite;
+  box-shadow: 0 0 6px #4aaaff;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-120vh); }
 }
 
 /* CONTEÚDO */
-section{
-  padding:60px 20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
+header, section, footer {
+  position: relative;
+  z-index: 2;
 }
 
-section > *{
-  max-width:650px;
-  width:100%;
+header {
+  text-align: center;
+  padding: 40px 20px;
 }
 
-.fade{
-  opacity:0;
-  transform:translateY(20px);
-  transition:1s;
+.glow {
+  font-size: 38px;
+  color: #00aaff;
+  text-shadow: 0 0 10px #00aaff, 0 0 20px #0066ff;
 }
 
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
+/* FADE */
+.fade {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: 1s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* TABELA */
-.table{
-  background:#111;
-  border-radius:12px;
-  overflow:hidden;
+.table {
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
-.row{
-  display:flex;
-  justify-content:space-between;
-  padding:12px;
-  border-bottom:1px solid #222;
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
-.row:last-child{
-  border:none;
-}
+.row:last-child { border-bottom: none; }
 
-.row span{
-  color:#aaa;
-}
-
-.row b{
-  color:#00aaff;
-}
+.row span { color: #ccc; }
+.row b { color: #00aaff; }
 
 /* BOTÃO */
-button{
-  margin-top:12px;
-  padding:12px;
-  width:100%;
-  background:#00aaff;
-  border:none;
-  border-radius:10px;
-  color:#fff;
-  font-weight:bold;
+button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  background: #00aaff;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00aaff;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00aaff;
+}
+
+/* TEXTO SEPARADO */
+.about-block {
+  margin: 16px 0;
+  padding: 14px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 10px;
+}
+
+.about-block p {
+  line-height: 1.7;
+  color: #ddd;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #666;
 }
 
 </style>
@@ -138,86 +189,107 @@ button{
 
 <!-- LOADING -->
 <div id="loading">
-  <div id="percent">0%</div>
-  <div id="bar"><div id="progress"></div></div>
+  <div class="loading-box">
+    <div class="title">BEM VINDO AO SITE</div>
+    <div id="percent">0%</div>
+    <div id="bar"><div id="progress"></div></div>
+  </div>
 </div>
 
 <!-- ESTRELAS -->
-<script>
-for(let i=0;i<100;i++){
-  const s=document.createElement("div");
-  s.className="star";
-  s.style.left=Math.random()*100+"%";
-  s.style.top=Math.random()*100+"%";
-  s.style.animationDuration=(Math.random()*6+3)+"s";
-  document.body.appendChild(s);
-}
-</script>
+<div class="stars" id="stars"></div>
 
-<!-- SITE -->
-<section class="fade">
-  <h1>DLKZ77CC EDITZ</h1>
-</section>
+<!-- HEADER -->
+<header class="fade">
+  <h1 class="glow">DLKZ77CC EDITZ</h1>
+  <p>Motion | Anime | Futebol | Foto</p>
+</header>
 
+<!-- PREÇOS -->
 <section class="fade">
   <h2>Preços</h2>
 
   <div class="table">
-    <div class="row"><span>Edição de Fotos</span><b>R$ 7</b></div>
-    <div class="row"><span>Futebol</span><b>R$ 12</b></div>
-    <div class="row"><span>Anime</span><b>R$ 15</b></div>
-    <div class="row"><span>Roblox</span><b>R$ 19</b></div>
-    <div class="row"><span>Free Fire</span><b>R$ 27</b></div>
-    <div class="row"><span>Motion</span><b>R$ 30</b></div>
+    <div class="row"><span>Edição de Fotos</span><b>R$ 7,00</b></div>
+    <div class="row"><span>Edit de Futebol</span><b>R$ 12,00</b></div>
+    <div class="row"><span>Edit de Anime</span><b>R$ 15,00</b></div>
+    <div class="row"><span>Roblox</span><b>R$ 19,00</b></div>
+    <div class="row"><span>Free Fire</span><b>R$ 27,00</b></div>
+    <div class="row"><span>Motion Design</span><b>R$ 30,00</b></div>
   </div>
 </section>
 
+<!-- SOBRE MIM (SEPARADO CORRETO) -->
 <section class="fade">
-  <h2>Pedido</h2>
-  <button onclick="zap()">FALAR NO WHATSAPP</button>
+  <h2>Sobre mim</h2>
+
+  <div class="about-block">
+    <p>Sou editor de motion e criador de conteúdo visual, especializado em edits de anime, futebol e edição de fotos. Meu trabalho é transformar imagens e cenas em algo mais impactante, com foco em estética, ritmo e emoção.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Nas edits de anime, busco intensidade e identidade visual forte, destacando cada frame com efeitos que combinam com a energia das cenas. No futebol, foco na velocidade, na adrenalina e no impacto de cada jogada.</p>
+  </div>
+
+  <div class="about-block">
+    <p>Na edição de fotos, aprimoro cores, contraste e estilo para criar visuais mais chamativos e profissionais. Sempre buscando evoluir e elevar o nível de cada projeto.</p>
+  </div>
 </section>
 
-<!-- SCRIPT FINAL -->
+<!-- PEDIDO -->
+<section class="fade">
+  <h2>O que você quer na edição?</h2>
+
+  <textarea placeholder="Descreva sua ideia..."></textarea>
+
+  <button onclick="zap()">FALAR COM O EDITOR NO WHATSAPP</button>
+</section>
+
+<footer>
+  <p>© DLKZ77CC EDITZ</p>
+</footer>
+
 <script>
 
-window.onload=function(){
+/* LOADING */
+let p = 0;
 
-  const loading=document.getElementById("loading");
-  const progress=document.getElementById("progress");
-  const percent=document.getElementById("percent");
+let load = setInterval(() => {
+  p++;
 
-  let p=0;
+  document.getElementById("progress").style.width = p + "%";
+  document.getElementById("percent").innerText = p + "%";
 
-  const load=setInterval(()=>{
+  if (p >= 100) {
+    clearInterval(load;
 
-    p++;
+    document.getElementById("loading").style.opacity = "0";
 
-    progress.style.width=p+"%";
-    percent.innerText=p+"%";
+    setTimeout(() => {
+      document.getElementById("loading").style.display = "none";
 
-    if(p>=100){
-      clearInterval(load);
+      document.querySelectorAll(".fade").forEach((el,i)=>{
+        setTimeout(()=> el.classList.add("show"), i*200);
+      });
 
-      setTimeout(()=>{
+    }, 800);
+  }
 
-        loading.style.opacity="0";
+}, 20);
 
-        setTimeout(()=>{
+/* ESTRELAS */
+const stars = document.getElementById("stars");
 
-          loading.style.display="none";
+for (let i = 0; i < 120; i++) {
+  let s = document.createElement("div");
+  s.className = "star";
 
-          document.querySelectorAll(".fade").forEach((el,i)=>{
-            setTimeout(()=>el.classList.add("show"),i*150);
-          });
+  s.style.left = Math.random()*100 + "%";
+  s.style.top = Math.random()*100 + "%";
+  s.style.animationDuration = (Math.random()*5+3)+"s";
 
-        },300);
-
-      },200);
-    }
-
-  },20);
-
-};
+  stars.appendChild(s);
+}
 
 /* WHATSAPP */
 function zap(){
